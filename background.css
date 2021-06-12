@@ -8,18 +8,18 @@ body{
 }
 
 .welcome {
-    font-family: 'Akronim';
+    z-index: 1;
+    font-family: 'Faster One';
     font-size: 90pt;
-    color: slategray;
+    color: rgb(238, 167, 14);
     text-align: center;
     margin-top: 400px;
-    z-index: 1;
 }
 
 .welcometag {
     text-align: center;
     position: absolute;
-    font-family: 'Averia Sans Libre';
+    font-family: 'K2D';
     font-size: 40pt;
     color: slategray;
     text-decoration: none;      
@@ -57,22 +57,22 @@ body{
     }
 
 #medium_circle { 
-  display: block;
-  position: relative;
-  z-index: 0;
-  top: -100px;
-  left: calc(10% + 50px);
-  width: 200px;
-  height: 200px;
-  opacity: 0.7;
-  border-radius: 100px;
-  background: linear-gradient(#ff1e00, #ffc666);
-  animation: rotation 8s linear infinite;
-  -moz-animation: rotation 8s linear infinite;
-  -ms-animation: rotation 8s linear infinite;
-  -o-animation: rotation 8s linear infinite;
-  -webkit-animation: rotation 8s linear infinite;
-  }
+    display: block;
+    position: absolute;
+    z-index: 0;
+    top: -50px;
+    left: calc(10% + 50px);
+    width: 200px;
+    height: 200px;
+    opacity: 0.7;
+    border-radius: 100px;
+    background: linear-gradient(#ff1e00, #ffc666);
+    animation: rotation 8s linear infinite;
+    -moz-animation: rotation 8s linear infinite;
+    -ms-animation: rotation 8s linear infinite;
+    -o-animation: rotation 8s linear infinite;
+    -webkit-animation: rotation 8s linear infinite;
+    }
 
 #big_circle { 
     display: block;
@@ -125,6 +125,23 @@ body{
     -o-animation: rotation 10s linear infinite;
     -webkit-animation: rotation 10s linear infinite;
     }
+  
+#red_dotted_circle {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    right: calc(50% + 250px);
+    top: -500px;
+    height: 1000px;
+    width: 1000px;
+    border-radius: 1000px;
+    border: 3px dashed #ff1e00;
+    animation: rotation 60s linear infinite;
+    -moz-animation: rotation 60s linear infinite;
+    -ms-animation: rotation 60s linear infinite;
+    -o-animation: rotation 60s linear infinite;
+    -webkit-animation: rotation 60s linear infinite;
+  }
 
 .background span {
     z-index: -2;
