@@ -60,7 +60,7 @@ body{
     display: block;
     position: absolute;
     z-index: 0;
-    top: -50px;
+    top: 120px;
     left: calc(10% + 50px);
     width: 200px;
     height: 200px;

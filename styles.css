@@ -1,4 +1,5 @@
 body{
+    margin: 0%;
     background: linear-gradient(180deg, #232e4b, #020c25);
     background-repeat: no-repeat;
     background-position: center;
@@ -6,6 +7,7 @@ body{
     background-size: cover;
     overflow: hidden;
 }
+
 
 .welcome {
     z-index: 1;
@@ -15,6 +17,68 @@ body{
     text-align: center;
     margin-top: 400px;
 }
+
+header {
+    background-color: #ffc666;
+    height: 75px;
+    position: relative;
+    z-index: 1;
+}
+
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+nav {
+    float: right;
+    margin-right: 75px;
+    font-family: 'K2D';
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 35px;
+    padding-top: 25px;
+    position: relative;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+a:hover {
+    color: slategray;
+}
+
+a:active {
+    color:slategray;
+}
+
+nav a::before {
+    content:'';
+    display: block;
+    height: 5px;
+    width: 0%;
+    background-color: slategray;
+    position: absolute;
+    top: 0;
+    transition: all ease-in-out .25s;
+}
+
+nav a:hover::before {
+    width: 100%;
+}
+
 
 .circles_bg {
     opacity: 0.5;
@@ -63,8 +127,8 @@ body{
 #medium_circle { 
     display: block;
     position: absolute;
-    z-index: 0;
-    top: -50px;
+    z-index: -1;
+    top: 120px;
     left: calc(10% + 50px);
     width: 200px;
     height: 200px;
