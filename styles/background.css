@@ -1,19 +1,18 @@
+:root {
+    background-color: #150941;
+}
+
 body{
-    background: linear-gradient(45deg, #000000, #020c25, #373e52, #020c25, #000000);
-    /*background: linear-gradient(180deg, #232e4b, #020c25);*/
-    /*background: linear-gradient(110deg, #335e5b, #021f1f);*/
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
+    min-height: 100vh;
     overflow: hidden;
+    margin: 0%;
 }
 
 .welcome {
     z-index: 1;
     font-family: 'Faster One';
     font-size: 90pt;
-    color: rgb(238, 167, 14);
+    color: #f80040;
     text-align: center;
     margin-top: 400px;
 }
@@ -28,11 +27,11 @@ body{
 }
 
 .welcometag:hover{
-    color: rgb(238, 167, 14);
+    color: #f80040;
 }
 
 .blink {
-    color:rgb(238, 167, 14);
+    color:#f80040;
     position: relative;
     display: inline-block;
     animation: blink-animation 1s linear infinite;
@@ -48,7 +47,7 @@ body{
     height: 50px;
     width: 50px;
     border-radius: 50px;
-    background: linear-gradient(#fb6962, #ffc666);
+    background: linear-gradient(#f80040, #150941);
     animation: small-circle 3s ease-in-out 0s infinite alternate;
     -moz-animation: small-circle 3s ease-in-out 0s infinite alternate;
     -ms-animation: small-circle 3s ease-in-out 0s infinite alternate;
@@ -66,7 +65,7 @@ body{
     height: 200px;
     opacity: 0.7;
     border-radius: 100px;
-    background: linear-gradient(#ff1e00, #ffc666);
+    background: linear-gradient(#f80040, #150941);
     animation: rotation 8s linear infinite;
     -moz-animation: rotation 8s linear infinite;
     -ms-animation: rotation 8s linear infinite;
@@ -82,11 +81,9 @@ body{
     bottom: 0;
     height: 400px;
     width: 400px;
-    opacity: 0.7;
+    opacity: 0.4;
     border-radius: 200px;
-    /*background: linear-gradient(#12362b, #163744);*/
-    /*background: linear-gradient(#fb6962, #162344);*/
-    background: linear-gradient(#ffc666, #ffa200);
+    background: linear-gradient(#f80040, #150941);
     animation: big-circle 15s ease-in-out 0s infinite alternate;
     -moz-animation: big-circle 15s ease-in-out 0s infinite alternate;
     -ms-animation: big-circle 15s ease-in-out 0s infinite alternate;
@@ -115,18 +112,14 @@ body{
     display: block;
     position: absolute;
     z-index: -1;
+    opacity: .9;
     top: 600px;
     left: calc(10% + -250px);
     width: 600px;
     height: 600px;
     border-radius: 300px;
-    background: linear-gradient(#162344, #ffc666);
-    animation: rotation 10s linear infinite;
-    -moz-animation: rotation 10s linear infinite;
-    -ms-animation: rotation 10s linear infinite;
-    -o-animation: rotation 10s linear infinite;
-    -webkit-animation: rotation 10s linear infinite;
-    }
+    background: repeating-linear-gradient(-45deg, #f80040, #f80040 10px, #150941 10px, #150941 20px);
+}
   
 #red_dotted_circle {
     display: block;
@@ -137,7 +130,7 @@ body{
     height: 1000px;
     width: 1000px;
     border-radius: 1000px;
-    border: 3px dashed #ff1e00;
+    border: 3px dashed #f80040;
     animation: rotation 60s linear infinite;
     -moz-animation: rotation 60s linear infinite;
     -ms-animation: rotation 60s linear infinite;

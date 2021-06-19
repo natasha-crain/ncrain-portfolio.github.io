@@ -1,14 +1,11 @@
-body {
-    margin: 0%;
-    /*background: linear-gradient(180deg, #232e4b, #020c25);*/
-    /*background: linear-gradient(180deg, #ffffff, #df8b1d);*/
-    /*background: linear-gradient(180deg, #df8b1d, #ffffff);*/
-    /*background: linear-gradient(180deg, #680c5b, #044d3d);*/
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
+:root {
+    background-color: #150941;
+}
+
+body{
+    min-height: 100vh;
     overflow: hidden;
+    margin:0%;
 }
 
 .welcome {
@@ -34,14 +31,15 @@ body {
 }
 
 header {
-    background-color: #ffc666;
+    background-color: #f71950;
     height: 75px;
+    opacity: 1;
     position: relative;
     z-index: 1;
 }
 
 footer {
-    background-color: #da9e37;
+    background-color: #f80040;
     height: 40px;
     left: 0;
     bottom: 0;
@@ -92,7 +90,7 @@ nav a {
 }
 
 a:hover {
-    color: #0e2e80;
+    color: #150941;
 }
 
 /*a:active {
@@ -104,7 +102,7 @@ nav a::before {
     display: block;
     height: 5px;
     width: 0%;
-    background-color: #0e2e80;
+    background-color: #150941;
     position: absolute;
     top: 0;
     transition: all ease-in-out .25s;
@@ -115,27 +113,27 @@ nav a:hover::before {
 }
 
 .content_box {
-    background: linear-gradient(45deg, #000000, #020c25, #373e52, #020c25, #000000);
+    background-color: #f71950;
     z-index: 1;
     position: relative;
     left: 600px;
     top: 175px;
-    box-shadow: 5px 5px #da9e37;
+    box-shadow: 0 20px 12px -12px black;
     padding: 10px;
     opacity: 0.9;
     width: 750px;
     height: 500px;
 }
 
-#content {
-    width: 300px;
+.content {
+    width: 325px;
     height: 300px;
     color: white;
     font-family: 'K2D';
     font-size: 12pt;
     float: right;
-    margin-right: 75px;
-    margin-top: 75px;
+    margin-right: 50px;
+    margin-top: 100px;
     text-align: justify;
 }
 
@@ -152,11 +150,11 @@ nav a:hover::before {
     font-size: 50pt;
     color: white;
     text-align: right;
-    top: 100px;
-    left: -800px;
-    width: 800px;
+    top: 190px;
+    left: -2000px;
+    width: 1381px;
     height: 100px;
-    background: #ffc666;
+    opacity: 1;
     animation: slideIn 0.25s forwards;
     -webkit-animation: slideIn 0.25s forwards;
     animation-delay: 0.5s;
@@ -167,9 +165,9 @@ nav a:hover::before {
     margin-right: 5%;
 }
 
-.circles_bg {
+/*.circles_bg {
     opacity: 1;
-}
+}*/
 
 #small_circle { 
     display: block;
@@ -180,30 +178,20 @@ nav a:hover::before {
     height: 50px;
     width: 50px;
     border-radius: 50px;
-    background: linear-gradient(#fb6962, #ffc666);
-    animation: rotation 40s linear infinite;
-    -moz-animation: rotation 40s linear infinite;
-    -ms-animation: rotation 40s linear infinite;
-    -o-animation: rotation 40s linear infinite;
-    -webkit-animation: rotation 20s linear infinite;
+    background: linear-gradient(#f80040, #150941);
     }
 
 #medium_circle { 
     display: block;
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     top: 120px;
     left: calc(10% + 50px);
     width: 200px;
     height: 200px;
     opacity: 0.7;
     border-radius: 100px;
-    background: linear-gradient(#ff1e00, #ffc666);
-    animation: rotation 20s linear infinite;
-    -moz-animation: rotation 20s linear infinite;
-    -ms-animation: rotation 20s linear infinite;
-    -o-animation: rotation 20s linear infinite;
-    -webkit-animation: rotation 20s linear infinite;
+    background: linear-gradient(#f80040, #150941);
     }
 
 #big_circle { 
@@ -216,12 +204,7 @@ nav a:hover::before {
     width: 400px;
     opacity: 0.7;
     border-radius: 200px;
-    background: linear-gradient(#ffc666, #ffa200);
-    animation: rotation 40s linear infinite;
-    -moz-animation: rotation 40s linear infinite;
-    -ms-animation: rotation 40s linear infinite;
-    -o-animation: rotation 40s linear infinite;
-    -webkit-animation: rotation 30s linear infinite;
+    background: linear-gradient(#f80040, #150941);
     }
 
 #dotted_circle {
@@ -233,7 +216,7 @@ nav a:hover::before {
     height: 1000px;
     width: 1000px;
     border-radius: 600px;
-    border: 3px dashed #ffc666;
+    border: 3px dashed white;
     animation: rotation 150s linear infinite;
     -moz-animation: rotation 150s linear infinite;
     -ms-animation: rotation 150s linear infinite;
@@ -250,12 +233,7 @@ nav a:hover::before {
     width: 600px;
     height: 600px;
     border-radius: 300px;
-    background: linear-gradient(#162344, #ffc666);
-    animation: rotation 50s linear infinite;
-    -moz-animation: rotation 50s linear infinite;
-    -ms-animation: rotation 50s linear infinite;
-    -o-animation: rotation 50s linear infinite;
-    -webkit-animation: rotation 50s linear infinite;
+    background: repeating-linear-gradient(-45deg, #f80040, #f80040 10px, #150941 10px, #150941 20px);
     }
   
 #red_dotted_circle {
@@ -267,7 +245,7 @@ nav a:hover::before {
     height: 1000px;
     width: 1000px;
     border-radius: 1000px;
-    border: 3px dashed #ff1e00;
+    border: 3px dashed #f80040;
     animation: rotation 150s linear infinite;
     -moz-animation: rotation 150s linear infinite;
     -ms-animation: rotation 150s linear infinite;
