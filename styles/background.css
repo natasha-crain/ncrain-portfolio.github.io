@@ -1,5 +1,7 @@
 body{
-    background: linear-gradient(180deg, #232e4b, #020c25);
+    background: linear-gradient(45deg, #000000, #020c25, #373e52, #020c25, #000000);
+    /*background: linear-gradient(180deg, #232e4b, #020c25);*/
+    /*background: linear-gradient(110deg, #335e5b, #021f1f);*/
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -18,10 +20,10 @@ body{
 
 .welcometag {
     text-align: center;
-    position: absolute;
+    position: relative;
     font-family: 'K2D';
     font-size: 40pt;
-    color: slategray;
+    color: white;
     text-decoration: none;      
 }
 
@@ -29,14 +31,12 @@ body{
     color: rgb(238, 167, 14);
 }
 
-.fullstop {
-    height: 5px;
-    width: 20px;
+.blink {
+    color:rgb(238, 167, 14);
     position: relative;
     display: inline-block;
-    background-color: rgb(238, 167, 14);
-    animation: blink-animation 1.5s ease-in-out linear infinite;
-    -webkit-animation: blink-animation .7s linear infinite;
+    animation: blink-animation 1s linear infinite;
+    -webkit-animation: blink-animation 1s linear infinite;
 }
 
 #small_circle { 
@@ -84,7 +84,9 @@ body{
     width: 400px;
     opacity: 0.7;
     border-radius: 200px;
-    background: linear-gradient(#fb6962, #162344);
+    /*background: linear-gradient(#12362b, #163744);*/
+    /*background: linear-gradient(#fb6962, #162344);*/
+    background: linear-gradient(#ffc666, #ffa200);
     animation: big-circle 15s ease-in-out 0s infinite alternate;
     -moz-animation: big-circle 15s ease-in-out 0s infinite alternate;
     -ms-animation: big-circle 15s ease-in-out 0s infinite alternate;
@@ -101,7 +103,7 @@ body{
     height: 1000px;
     width: 1000px;
     border-radius: 600px;
-    border: 3px dashed #ffc666;
+    border: 3px dashed white;
     animation: rotation 60s linear infinite;
     -moz-animation: rotation 60s linear infinite;
     -ms-animation: rotation 60s linear infinite;

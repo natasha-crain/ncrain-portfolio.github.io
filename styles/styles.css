@@ -1,6 +1,9 @@
 body {
     margin: 0%;
-    background: linear-gradient(180deg, #232e4b, #020c25);
+    /*background: linear-gradient(180deg, #232e4b, #020c25);*/
+    /*background: linear-gradient(180deg, #ffffff, #df8b1d);*/
+    /*background: linear-gradient(180deg, #df8b1d, #ffffff);*/
+    /*background: linear-gradient(180deg, #680c5b, #044d3d);*/
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -89,19 +92,19 @@ nav a {
 }
 
 a:hover {
-    color: slategray;
+    color: #0e2e80;
 }
 
-a:active {
-    color:slategray;
-}
+/*a:active {
+    color:#0e2e80;
+}*/
 
 nav a::before {
     content:'';
     display: block;
     height: 5px;
     width: 0%;
-    background-color: slategray;
+    background-color: #0e2e80;
     position: absolute;
     top: 0;
     transition: all ease-in-out .25s;
@@ -112,23 +115,60 @@ nav a:hover::before {
 }
 
 .content_box {
-    background-color: #000000;
+    background: linear-gradient(45deg, #000000, #020c25, #373e52, #020c25, #000000);
     z-index: 1;
-    margin-left: auto;
-    margin-right: auto;
-    top: 120px;
-    /*border-radius: 10px;*/
-    /*border: 20px solid #000000;*/
+    position: relative;
+    left: 600px;
+    top: 175px;
     box-shadow: 5px 5px #da9e37;
     padding: 10px;
+    opacity: 0.9;
+    width: 750px;
+    height: 500px;
+}
+
+#content {
+    width: 300px;
+    height: 300px;
+    color: white;
+    font-family: 'K2D';
+    font-size: 12pt;
+    float: right;
+    margin-right: 75px;
+    margin-top: 75px;
+    text-align: justify;
+}
+
+.wrapper {
+    position: absolute;
+    width: 800px;
+    height: 100px;
+}
+
+.slideIn {
     position: relative;
-    opacity: 0.6;
-    width: 1700px;
-    height: 650px; 
+    z-index: 2;
+    font-family: 'K2D';
+    font-size: 50pt;
+    color: white;
+    text-align: right;
+    top: 100px;
+    left: -800px;
+    width: 800px;
+    height: 100px;
+    background: #ffc666;
+    animation: slideIn 0.25s forwards;
+    -webkit-animation: slideIn 0.25s forwards;
+    animation-delay: 0.5s;
+    -webkit-animation-delay: 0.5s;
+}
+
+.pageheader {
+    margin-right: 5%;
 }
 
 .circles_bg {
-    opacity: 0.1;
+    opacity: 1;
 }
 
 #small_circle { 
@@ -176,7 +216,7 @@ nav a:hover::before {
     width: 400px;
     opacity: 0.7;
     border-radius: 200px;
-    background: linear-gradient(#fb6962, #162344);
+    background: linear-gradient(#ffc666, #ffa200);
     animation: rotation 40s linear infinite;
     -moz-animation: rotation 40s linear infinite;
     -ms-animation: rotation 40s linear infinite;
@@ -235,7 +275,20 @@ nav a:hover::before {
     -webkit-animation: rotation 150s linear infinite;
   }
 
+/*animations*/
 
+@keyframes slideIn {
+        100% {
+            left: 0;
+        }
+    }
+
+@-webkit-keyframes slideIn {
+        100% {
+            left: 0;
+        }
+    }
+  
 @keyframes rotation {
         from {
           transform: rotate(0deg);
