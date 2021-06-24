@@ -15,6 +15,7 @@ body{
     color: #f80040;
     text-align: center;
     margin-top: 400px;
+    position: relative;
 }
 
 .welcometag {

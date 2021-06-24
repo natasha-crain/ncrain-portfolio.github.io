@@ -53,9 +53,12 @@ footer {
 .footer {
     font-family: 'K2D';
     color: white;
+    font-weight: bold;
     float: right;
     line-height: 6px;
     margin-right: 75px;
+    position: relative;
+    z-index: 2;
 }
 
 header::after {
@@ -116,12 +119,13 @@ nav a:hover::before {
     background-color: #f71950;
     z-index: 1;
     position: relative;
-    left: 600px;
+    margin: auto;
+    /*left: 600px;*/
     top: 175px;
     box-shadow: 0 20px 12px -12px black;
     padding: 10px;
     opacity: 0.9;
-    width: 750px;
+    width: 50%;
     height: 500px;
 }
 
@@ -133,8 +137,71 @@ nav a:hover::before {
     font-size: 12pt;
     float: right;
     margin-right: 50px;
-    margin-top: 100px;
+    margin-top: 130px;
+    position: relative;
     text-align: justify;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#selfie {
+    width: 150px;
+    height: 150px;
+    background-color: aliceblue;
+    border-radius: 100px;
+    margin-left: 15%;
+    margin-top: 10%;
+    position: absolute;
+}
+
+#socialmedia {
+    color: white;
+    position: absolute;
+    top: 300px;
+    left: 150px;
+    padding: 20px;
+}
+
+hr {
+    background-color: white;
+    transform: rotate(90deg);
+    position: absolute;
+    margin-top: 25%;
+    margin-left: 33%;
+    width: 30%;
+}
+
+@media screen and (max-width: 600px) { 
+    .content_box {
+    background-color: #f71950;
+    z-index: 1;
+    position: relative;
+    margin: auto;
+    top: 100px;
+    box-shadow: 0 20px 12px -12px black;
+    padding: 10px;
+    opacity: 0.9;
+    width: 90%;
+    height: 600px;
+    }
+}
+
+@media screen and (max-width: 600px) { 
+    .content {
+        /*width: 325px;*/
+        height: 300px;
+        color: white;
+        font-family: 'K2D';
+        font-size: 12pt;
+        float: center;
+        /*margin: auto;*/
+       /* margin-right: 50px;
+        margin-top: 100px;*/
+        text-align: justify;
+    }
 }
 
 .wrapper {
@@ -152,8 +219,8 @@ nav a:hover::before {
     text-align: right;
     top: 190px;
     left: -2000px;
-    width: 1381px;
-    height: 100px;
+    width: 1390px;
+    /*height: 100px;*/
     opacity: 1;
     animation: slideIn 0.25s forwards;
     -webkit-animation: slideIn 0.25s forwards;
@@ -162,7 +229,7 @@ nav a:hover::before {
 }
 
 .pageheader {
-    margin-right: 5%;
+    margin-right: auto;
 }
 
 /*.circles_bg {
