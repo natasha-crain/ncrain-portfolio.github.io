@@ -2,8 +2,12 @@
 @import url("https://fonts.googleapis.com/css?family=K2D");
 @import url("https://fonts.googleapis.com/css?family=Faster One");
 
+/*tutorial found on youtube for both mobile and desktop navbar, found here:
+    https://www.youtube.com/watch?v=8QKOaTYvYUA - author: Kevin Powell*/
+
 :root {
     background-color: #150941;
+    color:white;
 }
 
 body{
@@ -34,89 +38,230 @@ body{
     color: rgb(238, 167, 14);
 }
 
+/*mobile first navbar styling*/
+
 header {
     background-color: #f71950;
-    height: 75px;
-    opacity: 1;
-    position: relative;
-    z-index: 1;
-}
-
-footer {
-    background-color: #f80040;
-    height: 40px;
-    left: 0;
-    bottom: 0;
-    width: 100%;
     text-align: center;
     position: fixed;
-    opacity: 0.7;
-    z-index: 1;
+    width: 100%;
+    height: 60px;
+    z-index: 999;
 }
 
-.footer {
-    font-family: 'K2D';
-    color: white;
-    font-weight: bold;
-    float: right;
-    line-height: 6px;
-    margin-right: 75px;
+.nav-toggle {
+    display: none;
+}
+
+.nav-toggle-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 5rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.nav-toggle-label span, 
+.nav-toggle-label span::before, 
+.nav-toggle-label span::after {
+    display: block;
+    background-color: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
     position: relative;
-    z-index: 2;
 }
 
-header::after {
+.nav-toggle-label span:hover,
+.nav-toggle-label span:hover::before,
+.nav-toggle-label span:hover::after {
+    background-color: #150941;
+    transform: scale(1.5, 1.5);
+    transition: transform 500ms ease-in-out;
+}
+
+.nav-toggle-label span:active,
+.nav-toggle-label span:active::before,
+.nav-toggle-label span:active::after {
+    background-color: #060214;
+}
+
+.nav-toggle-label span::before, 
+.nav-toggle-label span::after {
     content: '';
-    display: table;
-    clear: both;
+    position: absolute;
+}
+
+.nav-toggle-label span::before {
+    bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+    top: 7px;
+}
+
+.logo {
+    float: left;
+    line-height: 50%;
+    margin-left: 2em;
 }
 
 nav {
-    float: right;
-    margin-right: 75px;
-    font-family: 'K2D';
+    position:absolute;
+    text-align: right;
+    top: 100%;
+    right: 0;
+    background-color: #f71950;
+    width: 100%;
+    height: 100vmax;
+    transform: scale(1, 0);
+    transform-origin: top;
+    transition: transform 500ms ease-in-out;
 }
 
 nav ul {
-    margin: 0;
-    padding: 0;
+    margin-left: 0;
     list-style: none;
+    margin-top: 5em;
 }
 
 nav li {
-    display: inline-block;
-    margin-left: 35px;
-    padding-top: 25px;
-    position: relative;
+    margin-bottom: 1em;
+    margin-right: 5em;
+    padding: 3em;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-family: 'K2D';
+    opacity: 0;
+    transition: opacity 100ms ease-in-out;
 }
 
-a:hover {
-    color: #150941;
+nav a:hover {
+    color:#150941;
 }
 
-/*a:active {
-    color:#0e2e80;
-}*/
+.nav-toggle:checked ~ nav {
+    transform: scale(1, 1); 
+}
+
+.nav-toggle:checked ~ nav a {
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 250ms;
+}
 
 nav a::before {
-    content:'';
+    content: '';
     display: block;
     height: 5px;
-    width: 0%;
-    background-color: #150941;
-    position: absolute;
-    top: 0;
-    transition: all ease-in-out .25s;
+    background: #150941;
+    position: relative;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transform-origin: right;
+    transition: transform ease-in-out 250ms;
 }
 
 nav a:hover::before {
+    transform: scale(1, 1);
+}
+
+/*end of mobile first nav bar styling*/
+
+@media screen and (min-width: 920px) { /*desktop version of navbar*/
+    
+    .nav-toggle-label {
+        display: none;
+    }
+
+    header {
+        display: grid;
+        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+        position: fixed;
+        height: 75px;
+    }
+
+    .logo {
+        grid-column: 1 / 3;
+        align-items: center;
+        margin-left: -5em;
+        margin-top: 30px;
+    }
+
+    nav {
+        all: unset;
+        display: flex;
+        grid-column:  3/ 5;
+        justify-content: flex-end;
+        white-space: nowrap;  
+    }
+
+    nav ul {
+        position: relative;
+        display: flex;
+        bottom: 20px;
+        margin-top: auto;
+
+            
+    }
+
+    nav li {
+        margin-left: 5em;
+        margin: 0; 
+}
+
+    nav a {
+        opacity: 1;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        display: block;
+        height: 5px;
+        background: #150941;
+        position: absolute;
+        top: -0.5em;
+        left: 0;
+        right: 0;
+        transform: scale(0, 1);
+        transform-origin: right;
+        transition: transform ease-in-out 250ms;
+    }
+
+    nav a:hover::before {
+        transform: scale(1, 1);
+    }
+}
+
+/*end of desktop navbar styling*/
+
+
+footer {
+    background-color: #f80040;
+    height: 40px;
+    right: 0;
+    bottom: 0;
     width: 100%;
+    position: fixed;
+    opacity: 0.7;
+    z-index: 1;
+}
+
+footer p {
+    font-family: 'K2D';
+    text-align: right;
+    line-height: 50%;
+    margin-right: 5rem;
+
 }
 
 .content_box {
@@ -277,7 +422,7 @@ a {
     height: 600px;
     border-radius: 300px;
     background: repeating-linear-gradient(-45deg, #f80040, #f80040 10px, #150941 10px, #150941 20px);
-    }
+}
   
 #red_dotted_circle {
     display: block;
@@ -294,106 +439,140 @@ a {
     -ms-animation: rotation 150s linear infinite;
     -o-animation: rotation 150s linear infinite;
     -webkit-animation: rotation 150s linear infinite;
-  }
+}
 
-/*for mobile viewing*/
 
-@media screen and (max-width: 600px) { 
+
+
+
+/*for mobile/responsive devices*/
+
+@media screen and (max-width: 920px) {
+
+    /*header {
+        background-color: #f71950;
+        text-align: center;
+        position: fixed;
+        width: 100%;
+        height: 75px;
+        z-index: 999;
+    }
+
+    nav {
+        position:absolute;
+        text-align: right;
+        top: 100%;
+        right: 0;
+        background-color: #150941;
+        width: 100%;
+    }
+
+    nav ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    nav li {
+        margin-bottom: 1em;
+        margin-right: 1em;
+
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
+
+    nav a:hover {
+        color:#f71950;
+    }*/
+
+
+
     .content_box {
-    background-color: #f71950;
-    z-index: 1;
-    position: relative;
-    margin: auto;
-    top: 100px;
-    box-shadow: 0 20px 12px -12px black;
-    padding: 10px;
-    opacity: 0.9;
-    width: 90%;
-    height: 600px;
-    }
-}
+            background-color: #f71950;
+            z-index: 1;
+            position: relative;
+            margin: auto;
+            top: 100px;
+            box-shadow: 0 20px 12px -12px black;
+            padding: 10px;
+            opacity: 0.9;
+            width: 90%;
+            height: 600px;
+            }       
 
-@media screen and (max-width: 600px) { 
     .content {
-        /*width: 325px;*/
-        height: 300px;
-        color: white;
-        font-family: 'K2D';
-        font-size: 12pt;
-        margin-right: 55px;
-        margin-top: 275px;
-        text-align: justify;
-    }
-} 
+            /*width: 325px;*/
+            height: 300px;
+            color: white;
+            font-family: 'K2D';
+            font-size: 12pt;
+            margin-right: 0px;
+            margin-top: 275px;
+            text-align: justify;
+            }
+    
+            .hr {
+                display: none;
+            }
 
-@media screen and (max-width: 600px) { 
-    .hr {
-        display: none;
-    }
-}
-
-@media screen and (max-width: 600px) {
     #selfie {
-        width: 150px;
-        height: 150px;
-        background-color: aliceblue;
-        border-radius: 100px;
-        margin-left: 33%;
-        margin-top: 17%;
-        position: absolute;
-        box-shadow: 0 0 0 0 #150941;
-        animation: pulse 2s infinite;
-    }
-}
-
-@media screen and (max-width: 600px) {
+            width: 150px;
+            height: 150px;
+            background-color: aliceblue;
+            border-radius: 100px;
+            margin-left: 33%;
+            margin-top: 40%;
+            position: absolute;
+            box-shadow: 0 0 0 0 #150941;
+            animation: pulse 2s infinite;
+            }
+    
     #socialmedia {
-        color: white;
-        position: absolute;
-        font-size: small;
-        top: 260px;
-        left: 175px;
-        padding: 10px;
-    }
-}
+            color: white;
+            position: absolute;
+            font-size: small;
+            top: 260px;
+            left: 175px;
+            padding: 10px;
+            }
 
-@media screen and (max-width: 600px) {
     .slideIn {
-        position: relative;
-        z-index: 2;
-        font-family: 'K2D';
-        font-size: 40pt;
-        color: white;
-        top: 110px;
-        left: -2000px;
-        width: 390px;
-        opacity: 1;
-        animation: slideIn 1s forwards;
-        -webkit-animation: slideIn 1s forwards;
-        animation-delay: 0.5s;
-        -webkit-animation-delay: 0.5s;        
-    }
-}
-
-@media screen and (max-width: 600px) {
+            position: relative;
+            z-index: 2;
+            font-family: 'K2D';
+            font-size: 40pt;
+            color: white;
+            top: 110px;
+            left: -2000px;
+            width: 390px;
+            opacity: 1;
+            animation: slideIn 1s forwards;
+            -webkit-animation: slideIn 1s forwards;
+            animation-delay: 0.5s;
+            -webkit-animation-delay: 0.5s;        
+            }
+    
     .pageheader {
-        margin-right: center;
-    }
+            margin-right: center;
+            }
+
+    /*.footer {
+            font-family: 'K2D';
+            color: white;
+            font-weight: bold;
+            float: right;
+            line-height: 6px;
+            margin-right: 20px;
+            position: relative;
+            z-index: 2;
+            }*/
 }
 
 
-@media screen and (max-width: 600px) {
-    .footer {
-        font-family: 'K2D';
-        color: white;
-        font-weight: bold;
-        float: right;
-        line-height: 6px;
-        margin-right: 20px;
-        position: relative;
-        z-index: 2;
-    }
-}
 
 
 
