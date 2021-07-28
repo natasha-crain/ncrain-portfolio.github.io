@@ -18,14 +18,24 @@ html, body{
     position: relative;
 }
 
+body {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;    
+}
+
 .welcome {
+    display: block;
+    grid-column: 2 / 4;
+    justify-content: center;
+    margin: 0 auto 0 auto;
     z-index: 1;
     font-family: 'Faster One';
-    font-size: 90pt;
+    font-size: 8em;
     color: var(--pink);
     text-align: center;
-    margin-top: 400px;
-    position: relative;
+    margin-top: 350px;
 }
 
 .welcometag {
@@ -35,12 +45,14 @@ html, body{
     color: white;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 30pt;
+    font-size: 0.3em;
     text-decoration: none;      
 }
 
 .welcometag:hover{
     color: var(--pink);
+    font-size: 35pt;
+    transition: 0.75s;
 }
 
 .blink {
@@ -51,8 +63,6 @@ html, body{
     -webkit-animation: blink-animation 1s linear infinite;
 }
 
-
-
 .circles {
     width: 100%;
     height: 100%;
@@ -60,28 +70,31 @@ html, body{
 }
 
 #small_circle { 
-    display: block;
-    position: relative;
-    z-index: -1;
-    top: -750px;
+    display: flex;
+    grid-column: 1 / 2;
+    position: absolute;
+    justify-content: center;
+    z-index: 0;
+    top: 0px;
     left: 0px;
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background: linear-gradient(var(--pink), var(--blue));
+    background: linear-gradient(white, var(--blue));    
     animation: small-circle 3s ease-in-out 0s infinite alternate;
     -moz-animation: small-circle 3s ease-in-out 0s infinite alternate;
     -ms-animation: small-circle 3s ease-in-out 0s infinite alternate;
     -o-animation: small-circle 3s ease-in-out 0s infinite alternate;
     -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
-    }
+}
 
 #medium_circle { 
-    display: block;
-    position: relative;
+    display: flex;
+    grid-column: 1 / 2;
+    position: absolute;
     z-index: 0;
-    bottom: 55vh;
-    left: 18vw;
+    top: 120px;
+    left: 200px;
     width: 200px;
     height: 200px;
     opacity: 0.7;
@@ -92,35 +105,37 @@ html, body{
     -ms-animation: rotation 8s linear infinite;
     -o-animation: rotation 8s linear infinite;
     -webkit-animation: rotation 8s linear infinite;
-    }
+}
 
 #big_circle { 
-    display: block;
+    display: flex;
+    grid-column: 3 / 4;
     position: absolute;
     z-index: -1;
-    left: calc(50% + 250px);
-    bottom: 0;
+    left: 400px;
+    bottom: 0px;
     height: 400px;
     width: 400px;
     opacity: 0.4;
-    border-radius: 200px;
+    border-radius: 50%;
     background: linear-gradient(var(--pink), var(--blue));
     animation: big-circle 15s ease-in-out 0s infinite alternate;
     -moz-animation: big-circle 15s ease-in-out 0s infinite alternate;
     -ms-animation: big-circle 15s ease-in-out 0s infinite alternate;
     -o-animation: big-circle 15s ease-in-out 0s infinite alternate;
-    -webkit-animation: big-circle 15s ease-in-out 0s infinite alternate;
-    }
+    -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
+}
 
 #dotted_circle {
-    display: block;
+    display: flex;
+    grid-column: 4 / 4;
     position: absolute;
     z-index: -1;
-    left: calc(50% + 250px);
+    right: -350px;
     top: 70px;
     height: 1000px;
     width: 1000px;
-    border-radius: 600px;
+    border-radius: 50%;
     border: 3px dashed white;
     animation: rotation 60s linear infinite;
     -moz-animation: rotation 60s linear infinite;
@@ -129,79 +144,64 @@ html, body{
     -webkit-animation: rotation 60s linear infinite;
 }
 
-#giant_circle {
-    display: block;
-    position: relative;
-    z-index: -1;
-    opacity: 0.9;
-    bottom: 30vh;
-    left: -5vw;
-    width: 40vw;
-    height: 40vw;
-    border-radius: 50%;
-    background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 1vh, var(--blue) 1vh, var(--blue) 1.75vh);
-}
-
-/*#giant_circle {
-    display: block;
-    position: absolute;
-    z-index: -1;
-    opacity: .9;
-    top: 600px;
-    left: calc(10% + -250px);
-    width: 600px;
-    height: 600px;
-    border-radius: 300px;
-    background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--blue) 10px, var(--blue) 20px);
-}*/
-  
 #red_dotted_circle {
-    display: block;
+    display: flex;
+    grid-column: 1 / 1;
     position: absolute;
     z-index: 0;
-    right: calc(50% + 250px);
+    left: -300px;
     top: -500px;
     height: 1000px;
     width: 1000px;
-    border-radius: 1000px;
+    border-radius: 50%;
     border: 3px dashed var(--pink);
     animation: rotation 60s linear infinite;
     -moz-animation: rotation 60s linear infinite;
     -ms-animation: rotation 60s linear infinite;
     -o-animation: rotation 60s linear infinite;
     -webkit-animation: rotation 60s linear infinite;
-  }
+}
 
-.background span {
-    z-index: -2;
-    width: 5vmin;
-    height: 5vmin;
-    box-shadow: 5px;
-    border-radius: 20vmin;
-    backface-visibility: hidden;
+#giant_circle {
+    display: flex;
+    grid-column: 1 / 2;
     position: absolute;
-    animation-name: move;
-    animation-duration: 6s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    }
+    z-index: -1;
+    top: 600px;
+    left: -100px;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--blue) 10px, var(--blue) 20px);
+}
 
 
-/*mobile/responsive styling here*/
+
+/*==========================================================
+================mobile styling here=======================*/
 
 @media screen and (max-width:921px) {
 
+    body {
+        height: 100%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;    
+    }
+
     .welcome {
+        display: block;
+        grid-column: 1 / 4;
+        justify-content: center;
+        margin: 0 auto 0 auto;
         z-index: 1;
         font-family: 'Faster One';
-        font-size: 3.5em;
-        margin: 0 auto 0 auto;
+        font-size: 3.5rem;
         color: var(--pink);
         text-align: center;
         margin-top: 40vh;
-        position: relative;
     }
-        
+
     .welcometag {
         text-align: center;
         position: relative;
@@ -209,8 +209,8 @@ html, body{
         color: white;
         font-weight: bold;
         text-transform: uppercase;
-        font-size: 0.5em;
-        text-decoration: none;      
+        font-size: 1.2rem;
+        text-decoration: none;
     }
         
     .welcometag:hover{
@@ -225,24 +225,127 @@ html, body{
         -webkit-animation: blink-animation 1s linear infinite;
     }
 
-    #giant_circle {
-        display: block;
-        position: relative;
-        z-index: -1;
-        opacity: 0.9;
-        bottom: 30vh;
-        margin-top: 20%;
-        left: -5vw;
-        width: 60vw;
-        height: 60vw;
-        border-radius: 50%;
-        background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 1vh, var(--blue) 1vh, var(--blue) 1.75vh);
+    .circles {
+        width: 100%;
+        height: 100%;
+        margin: 0;
     }
 
+    #small_circle { 
+        display: flex;
+        grid-column: 1 / 2;
+        position: absolute;
+        justify-content: center;
+        z-index: 0;
+        top: -100px;
+        left: 0px;
+        height: 7vw;
+        width: 7vw;
+        border-radius: 50%;
+        background: linear-gradient(white, var(--blue));    
+        animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -moz-animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -ms-animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -o-animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
+    }
 
+    #medium_circle { 
+        display: flex;
+        grid-column: 1 / 2;
+        position: absolute;
+        z-index: 0;
+        top: 120px;
+        left: 20vw;
+        width: 20vw;
+        height: 20vw;
+        opacity: 0.7;
+        border-radius: 50%;
+        background: linear-gradient(var(--pink), var(--blue));
+        animation: rotation 8s linear infinite;
+        -moz-animation: rotation 8s linear infinite;
+        -ms-animation: rotation 8s linear infinite;
+        -o-animation: rotation 8s linear infinite;
+        -webkit-animation: rotation 8s linear infinite;
+    }
+    
+    #big_circle { 
+        display: flex;
+        grid-column: 3 / 4;
+        position: absolute;
+        z-index: -1;
+        left: 25vw;
+        bottom: 0px;
+        height: 35vw;
+        width: 35vw;
+        opacity: 0.4;
+        border-radius: 50%;
+        background: linear-gradient(var(--pink), var(--blue));
+        animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -moz-animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -ms-animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -o-animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
+    }
+    
+    #dotted_circle {
+        display: flex;
+        grid-column: 4 / 4;
+        position: absolute;
+        z-index: -1;
+        right: 50vw;
+        top: -30vh;
+        height: 100vw;
+        width: 100vw;
+        border-radius: 50%;
+        border: 3px dashed white;
+        animation: rotation 60s linear infinite;
+        -moz-animation: rotation 60s linear infinite;
+        -ms-animation: rotation 60s linear infinite;
+        -o-animation: rotation 60s linear infinite;
+        -webkit-animation: rotation 60s linear infinite;
+    }
+    
+    #red_dotted_circle {
+        display: flex;
+        grid-column: 1 / 1;
+        position: absolute;
+        z-index: 0;
+        left: 60vw;
+        top: 30vh;
+        height: 90vw;
+        width: 90vw;
+        border-radius: 50%;
+        border: 3px dashed var(--pink);
+        animation: rotation 60s linear infinite;
+        -moz-animation: rotation 60s linear infinite;
+        -ms-animation: rotation 60s linear infinite;
+        -o-animation: rotation 60s linear infinite;
+        -webkit-animation: rotation 60s linear infinite;
+    }
+
+    #giant_circle {
+        display: flex;
+        grid-column: 1 / 2;
+        position: absolute;
+        z-index: -1;
+        top: 80vh;
+        right: 5vw;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--blue) 10px, var(--blue) 20px);
+    }
 }
 
+/*====================end of================================
+================mobile styling here=======================*/
 
+
+
+
+/*==========================================================
+===================other animations=======================*/
 
 @keyframes rotation {
         from {
@@ -264,10 +367,10 @@ html, body{
   
 @keyframes big-circle {
         from {
-          transform: translate(0px, 300px) rotate(0deg);
+          transform: translate(0px, 0px) rotate(0deg);
         }
         to {
-          transform: translate(0px, -900px) rotate(360deg);
+          transform: translate(0px, -1000px) rotate(360deg);
         }
     }
 

@@ -15,56 +15,37 @@
     --blue: #150941;
 }
 
-/*custom scrollbar styling*/
+/*==========================================================
+============custom scrollbar styling here=================*/
 
-::-webkit-scrollbar { /* width of the scrollbar */
-    width: 10px;
+::-webkit-scrollbar { /*===width of the scrollbar===*/
+    width: 3px;
 }
   
-::-webkit-scrollbar-track {  /* color of track*/
-    background: #ffffff;
+::-webkit-scrollbar-track {  /*===color of track===*/
+    background: var(--blue);
 }
   
-::-webkit-scrollbar-thumb { /* color of handle */
+::-webkit-scrollbar-thumb { /*===color of handle===*/
     background: var(--pink);
 }
   
-::-webkit-scrollbar-thumb:hover { /* color of handle on hover */
+::-webkit-scrollbar-thumb:hover { /*===color of handle on hover===*/
     background: #720b25;
 }
 
-/*end of custom scrollbar styling*/
+/*===================end of=================================
+============custom scrollbar styling here=================*/
 
 html, body{
     min-height: 100vh;
     margin:0%;
-    overflow-x: hidden;
+    overflow: hidden;
     position: relative;
 }
 
-.welcome {
-    z-index: 1;
-    font-family: 'Faster One';
-    font-size: 90pt;
-    color: rgb(238, 167, 14);
-    text-align: center;
-    margin-top: 400px;
-}
-
-.welcometag {
-    text-align: center;
-    position: absolute;
-    font-family: 'K2D';
-    font-size: 40pt;
-    color: slategray;
-    text-decoration: none;      
-}
-
-.welcometag:hover{
-    color: rgb(238, 167, 14);
-}
-
-/*mobile first navbar styling*/
+/*==========================================================
+==========mobile/responsive navbar styling here===========*/
 
 header {
     background-color: var(--blue);
@@ -83,7 +64,7 @@ header {
     position: absolute;
     top: 0;
     right: 0;
-    margin-right: 5rem;
+    margin-right: 3.5rem;
     height: 100%;
     display: flex;
     align-items: center;
@@ -94,7 +75,7 @@ header {
 .nav-toggle-label span::before, 
 .nav-toggle-label span::after {
     display: block;
-    background-color: var(--pink);
+    background-color: white;
     height: 2px;
     width: 2em;
     border-radius: 2px;
@@ -105,15 +86,13 @@ header {
 .nav-toggle-label span:hover::before,
 .nav-toggle-label span:hover::after {
     background-color: var(--pink);
-    transform: scale(1.5, 1.5);
-    transition: transform 500ms ease-in-out;
 }
 
-.nav-toggle-label span:active,
+/*.nav-toggle-label span:active,
 .nav-toggle-label span:active::before,
 .nav-toggle-label span:active::after {
     background-color: var(--pink);
-}
+}*/
 
 .nav-toggle-label span::before, 
 .nav-toggle-label span::after {
@@ -132,8 +111,8 @@ header {
 .logo {
     height: 50%;
     width: auto;
-    margin-left: -100px;
-    margin-top: 15px; 
+    margin-left: -80px;
+    margin-top: 14px; 
 }
 
 nav {
@@ -199,9 +178,15 @@ nav a:hover::before {
     transform: scale(1, 1);
 }
 
-/*end of mobile first nav bar styling*/
+/*=======================end of=============================
+==========mobile/responsive navbar styling here===========*/
 
-@media screen and (min-width: 920px) { /*desktop version of navbar*/
+
+
+/*==========================================================
+===============desktop navbar styling here================*/
+
+@media screen and (min-width: 920px) { 
     
     .nav-toggle-label {
         display: none;
@@ -268,163 +253,172 @@ nav a:hover::before {
     }
 }
 
-/*end of desktop navbar styling*/
+/*======================end of==============================
+===============desktop navbar styling here================*/
 
 
-@media screen and (min-width:920px) { /*desktop styling goes here*/
 
-    .card {
-        background-color: var(--pink);
-        z-index: 1;
-        position: relative;
-        margin: auto;
-        top: 200px;
-        height: 60vh;
-        width: 80%;
-        box-shadow: 0px 20px 10px -12px rgb(0, 0, 0);
-        border-radius: 30px;
-        opacity: 0.9;
-        display: grid;
-        grid-template-columns: auto minmax(100px, max-content) repeat(auto-fit, 200px) 20%;
-    }
+/*==========================================================
+================desktop styling here======================*/
 
-    .wrapper {
-        position: absolute;
-        width: 200%;
-        display: flex;
-        grid-column:  1/ 4;
-        justify-content: flex-start;
-        top: 20px;
-    }
 
-    .slideIn {
-        color: var(--blue);
-        position: relative;
-        z-index: 2;
-        font-size: 50pt;
-        text-align: right;
-        left: -2000px;
-        opacity: 1;
-        animation: slideIn 0.25s forwards;
-        -webkit-animation: slideIn 0.25s forwards;
-        animation-delay: 0.75s;
-        -webkit-animation-delay: 0.75s;
-    }
-
-    .pgheader_hr {
-        background-color: var(--blue);
-        box-shadow: 5px 5px white;
-        border: 0px;
-        height: 8px;
-        width: auto;
-        padding-left: 450px;
-        margin: auto;
-    }
-
-    .selfie {
-        display: flex;
-        grid-column:  3/ 4;
-        position: relative;
-        justify-items: center;
-        margin: 0 auto 0 auto;
-        top: 125px;
-        width: 200px;
-        height: 200px;
-        object-fit: cover;
-        border: 5px solid var(--blue);
-        border-radius: 300px;
-        box-shadow: 0 0 0 0 var(--blue);
-        animation: pulse 2s infinite;
-    }
-
-    .socialmedia {
-        display: flex;
-        grid-column:  3/ 4;
-        justify-content: space-evenly;
-        top: 150px;
-        color: var(--blue);
-        position: inherit;
-        font-size: 30pt;
-        text-align: center;  
-    }
-
-    .content {
-        display: flex;
-        grid-column:  4/ 6;
-        bottom: 80px;
-        height: 200px;
-        width: 400px;
-        font-size: 1.1rem;
-        position: relative;
-        text-align: justify;
-    }
-
-    .contact_info {
-        display: flex;
-        grid-column:  4/ 6;
-        bottom: 80px;
-        height: 200px;
-        width: 400px;
-        font-size: 1.1rem;
-        position: relative;
-        text-align: justify;
-        overflow-wrap: break-word;
-    }
-
-   /* .contact_info {
-        display: flex;
-        grid-column:  4/ 6;
-        margin: 0 auto 0 auto;
-        position: relative;
-        justify-content: center;
-        right: 100px;
-        bottom: 130px;
-        height: 100px;
-        width: 400px;
-        text-align: left;
-        font-size: 1.1rem; 
-    }*/
-
-    span {
-        content: '';
-        width: 100%;
-    }
-
-    a {
-        text-decoration: none;
-        color: white;
-    }
-
-    a:hover {
-        color: #150941;
-        font-weight: bold;
-    }
-
-    footer {
-        background-color: #f7195000;
-        height: 40px;
-        right: 0;
-        bottom: 0;
-        width: 100%;
-        position: fixed;
-        opacity: 0.9;
-        z-index: 1;
-    }
-
-    footer p {
-        font-family: 'K2D';
-        text-align: center;
-        line-height: 50%;
-        color: var(--pink);
-        font-weight: bold;
-        font-size: 15pt;
-        text-shadow: #fff;
-    }
+.card {
+    background-color: var(--pink);
+    z-index: 1;
+    position: relative;
+    margin: auto;
+    top: 210px;
+    height: 60vh;
+    width: 80%;
+    box-shadow: 0px 20px 10px -12px rgb(0, 0, 0);
+    border-radius: 30px;
+    opacity: 0.9;
+    display: grid;
+    grid-template-columns: auto minmax(100px, max-content) repeat(auto-fit, 200px) 20%;
 }
 
-/*mobile stlying starts here*/
+.wrapper {
+    position: absolute;
+    width: 200%;
+    display: flex;
+    grid-column:  1/ 4;
+    justify-content: flex-start;
+    top: 20px;
+}
+
+.slideIn {
+    color: white;
+    position: relative;
+    z-index: 2;
+    font-size: 50pt;
+    text-align: right;
+    left: -2000px;
+    opacity: 1;
+    animation: slideIn 0.25s forwards;
+    -webkit-animation: slideIn 0.25s forwards;
+    animation-delay: 0.75s;
+    -webkit-animation-delay: 0.75s;
+}
+
+.pgheader_hr {
+    background-color: white;
+    border: 0px;
+    height: 8px;
+    width: auto;
+    padding-left: 450px;
+    margin: auto;
+}
+
+.selfie {
+    display: flex;
+    grid-column:  3/ 4;
+    position: relative;
+    justify-items: center;
+    margin: 0 auto 0 auto;
+    top: 175px;
+    width: 175px;
+    height: 175px;
+    object-fit: cover;
+    border: 2px solid white;
+    border-radius: 50%;
+    border-radius: 300px;
+    box-shadow: 0 0 0 0 white;
+    animation: pulse 2s infinite;
+}
+
+.socialmedia {
+    display: flex;
+    grid-column:  3/ 4;
+    justify-content: space-evenly;
+    top: 200px;
+    color: var(--blue);
+    position: inherit;
+    font-size: 30pt;
+    text-align: center;  
+}
+
+.insta-hover:hover{
+    font-size: 40pt;
+}
+
+.fa-hover:hover{
+    font-size: 40pt;
+}
+
+.content {
+    display: flex;
+    grid-column:  4/ 6;
+    bottom: 10px;
+    height: 200px;
+    width: 400px;
+    font-size: 1.1rem;
+    position: relative;
+    text-align: justify;
+}
+
+.contact_info {
+    display: block;
+    grid-column:  4/ 6;
+    bottom: 75px;
+    height: 200px;
+    width: 400px;
+    font-size: 1.2rem;
+    position: relative;
+    text-align: justify;
+}
+
+span {
+    content: '';
+    width: 100%;
+    }
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #150941;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #f7195000;
+    height: 40px;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    opacity: 0.9;
+    z-index: 1;
+}
+
+footer p {
+    font-family: 'K2D';
+    text-align: center;
+    line-height: 50%;
+    color: var(--pink);
+    font-weight: bold;
+    font-size: 15pt;
+    text-shadow: #fff;
+}
+
+/*====================end of================================
+================desktop styling here======================*/
+
+
+/*==========================================================
+================mobile styling here=======================*/
 
 @media screen and (max-width:920px) {
+
+html, body{
+    min-height: 100vh;
+    margin:0%;
+    overflow: auto;
+    position: relative;
+}
 
 .card {
     background-color: var(--pink);
@@ -447,15 +441,14 @@ nav a:hover::before {
     display: flex;
     grid-column:  1/ 4;
     justify-content: flex-start;
-    top: 20px;
+    top: 15px;
 }
 
 .slideIn {
-    color: var(--blue);
+    color: white;
     position: relative;
     z-index: 2;
     font-size: 3.5rem;
-    font-weight: bold;
     text-align: left;
     left: -2000px;
     width: 60%;
@@ -467,11 +460,11 @@ nav a:hover::before {
 }
 
 .pgheader_hr {
-    background-color: var(--blue);
-    box-shadow: 5px 5px white;
+    background-color: white;
     border: 0px;
-    height: 8px;
+    height: 5px;
     width: auto;
+    padding-left: 0px;
     margin: auto;
 }
 
@@ -484,12 +477,13 @@ nav a:hover::before {
     right: 0vw;
     top: 0vh;
     background-color: white;
-    min-width: 170px;
-    max-height: 170px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
-    border: 5px solid var(--blue);
+    border: 2px solid white;
+    border-radius: 50%;
     border-radius: 300px;
-    box-shadow: 0 0 0 0 var(--blue);
+    box-shadow: 0 0 0 0 white;
     animation: pulse 2s infinite;
 }
 
@@ -497,12 +491,20 @@ nav a:hover::before {
     display: flex;
     grid-column:  1/ 3;
     justify-content: space-evenly;
-    top: -8vh;
+    top: 0px;
     right: 0vw;
     color: var(--blue);
     position: inherit;
     font-size: 25pt;
     text-align: center; 
+}
+
+.insta-hover:hover{
+    font-size: 35pt;
+}
+
+.fa-hover:hover{
+    font-size: 35pt;
 }
 
 .content {
@@ -512,7 +514,7 @@ nav a:hover::before {
     justify-content: center;
     margin: 0 auto 0 auto;
     right: 0vw;
-    top: -15vh;
+    top: 0;
     bottom: 0px;
     height: 10%;
     width: 80%;
@@ -521,13 +523,13 @@ nav a:hover::before {
 }
 
 .contact_info {
-    display: flex;
+    display: block;
     grid-column:  1/ 3;
     position: relative;
     justify-content: center;
     margin: 0 auto 0 auto;
     right: 0vw;
-    top: -15vh;
+    top: 0;
     bottom: 0px;
     height: 10%;
     width: 80%;
@@ -565,109 +567,294 @@ footer p {
     text-shadow: #fff;
 }
 
+.welcome {
+    display: block;
+    grid-column: 2 / 3;
+    justify-content: normal;
+    align-items: flex-start;
+    margin: 0 auto 0 auto;
+    z-index: 1;
+    font-family: 'Faster One';
+    font-size: 3.5rem;
+    color: var(--pink);
+    text-align: center;
+    margin-top: 40vh;
 }
 
-/*mobile stlying ends here*/
+.welcometag {
+    text-align: center;
+    position: relative;
+    font-family: 'K2D';
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    text-decoration: none;
+}
+    
+.welcometag:hover{
+    color: var(--pink);
+}
+    
+.blink {
+    color: var(--pink);
+    position: relative;
+    display: inline-block;
+    animation: blink-animation 1s linear infinite;
+    -webkit-animation: blink-animation 1s linear infinite;
+}
+
+.circles {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+}
+
+/*====================end of================================
+================mobile styling here=======================*/
 
 
 
-/*background circle animations*/
+/*===================desktop=================================
+=================circle animations==========================*/
 
-.circles_bg {
-    overflow: hidden;
+.circles {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
 }
 
 #small_circle { 
-    display: block;
+    display: flex;
+    grid-column: 1 / 2;
     position: absolute;
-    z-index: -1;
-    top: 200px;
+    justify-content: center;
+    z-index: 0;
+    top: 0px;
     left: 0px;
     height: 50px;
     width: 50px;
-    border-radius: 50px;
-    background: linear-gradient(#f80040, #150941);
-    }
+    border-radius: 50%;
+    background: linear-gradient(white, var(--blue));    
+    animation: small-circle 3s ease-in-out 0s infinite alternate;
+    -moz-animation: small-circle 3s ease-in-out 0s infinite alternate;
+    -ms-animation: small-circle 3s ease-in-out 0s infinite alternate;
+    -o-animation: small-circle 3s ease-in-out 0s infinite alternate;
+    -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
+}
 
 #medium_circle { 
-    display: block;
+    display: flex;
+    grid-column: 1 / 2;
     position: absolute;
     z-index: 0;
     top: 120px;
-    left: calc(10% + 50px);
+    left: 200px;
     width: 200px;
     height: 200px;
     opacity: 0.7;
-    border-radius: 100px;
-    background: linear-gradient(#f80040, #150941);
-    }
+    border-radius: 50%;
+    background: linear-gradient(var(--pink), var(--blue));
+    animation: rotation 8s linear infinite;
+    -moz-animation: rotation 8s linear infinite;
+    -ms-animation: rotation 8s linear infinite;
+    -o-animation: rotation 8s linear infinite;
+    -webkit-animation: rotation 8s linear infinite;
+}
 
 #big_circle { 
-    display: block;
+    display: flex;
+    grid-column: 3 / 4;
     position: absolute;
     z-index: -1;
-    left: calc(50% + 250px);
-    bottom: 0;
+    right: 200px;
+    bottom: 350px;
     height: 400px;
     width: 400px;
-    opacity: 0.7;
-    border-radius: 200px;
-    background: linear-gradient(#f80040, #150941);
-    }
+    opacity: 0.4;
+    border-radius: 50%;
+    background: linear-gradient(var(--pink), var(--blue));
+    animation: big-circle 15s ease-in-out 0s infinite alternate;
+    -moz-animation: big-circle 15s ease-in-out 0s infinite alternate;
+    -ms-animation: big-circle 15s ease-in-out 0s infinite alternate;
+    -o-animation: big-circle 15s ease-in-out 0s infinite alternate;
+    -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
+}
 
 #dotted_circle {
-    display: block;
+    display: flex;
+    grid-column: 4 / 4;
     position: absolute;
     z-index: -1;
-    left: calc(50% + 250px);
+    right: -350px;
     top: 70px;
     height: 1000px;
     width: 1000px;
-    border-radius: 600px;
+    border-radius: 50%;
     border: 3px dashed white;
-    animation: rotation 150s linear infinite;
-    -moz-animation: rotation 150s linear infinite;
-    -ms-animation: rotation 150s linear infinite;
-    -o-animation: rotation 150s linear infinite;
-    -webkit-animation: rotation 150s linear infinite;
+    animation: rotation 60s linear infinite;
+    -moz-animation: rotation 60s linear infinite;
+    -ms-animation: rotation 60s linear infinite;
+    -o-animation: rotation 60s linear infinite;
+    -webkit-animation: rotation 60s linear infinite;
 }
 
-#giant_circle {
-    display: block;
-    position: absolute;
-    z-index: -1;
-    top: 600px;
-    left: calc(10% + -250px);
-    width: 600px;
-    height: 600px;
-    border-radius: 300px;
-    background: repeating-linear-gradient(-45deg, #f80040, #f80040 10px, #150941 10px, #150941 20px);
-}
-  
 #red_dotted_circle {
-    display: block;
+    display: flex;
+    grid-column: 1 / 1;
     position: absolute;
     z-index: 0;
-    right: calc(50% + 250px);
+    left: -300px;
     top: -500px;
     height: 1000px;
     width: 1000px;
-    border-radius: 1000px;
-    border: 3px dashed #f80040;
-    animation: rotation 150s linear infinite;
-    -moz-animation: rotation 150s linear infinite;
-    -ms-animation: rotation 150s linear infinite;
-    -o-animation: rotation 150s linear infinite;
-    -webkit-animation: rotation 150s linear infinite;
+    border-radius: 50%;
+    border: 3px dashed var(--pink);
+    animation: rotation 60s linear infinite;
+    -moz-animation: rotation 60s linear infinite;
+    -ms-animation: rotation 60s linear infinite;
+    -o-animation: rotation 60s linear infinite;
+    -webkit-animation: rotation 60s linear infinite;
+}
+
+#giant_circle {
+    display: flex;
+    grid-column: 1 / 2;
+    position: absolute;
+    z-index: -1;
+    top: 600px;
+    left: -100px;
+    width: 700px;
+    height: 700px;
+    border-radius: 50%;
+    background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--blue) 10px, var(--blue) 20px);
 }
 
 
-/*for mobile/responsive devices*/
+/*===================mobile=================================
+=================circle animations==========================*/
+
+@media screen and (max-width:920px) {
 
 
 
+#small_circle { 
+    display: flex;
+    grid-column: 1 / 2;
+    position: absolute;
+    justify-content: center;
+    z-index: 0;
+    top: -100px;
+    left: 0px;
+    height: 7vw;
+    width: 7vw;
+    border-radius: 50%;
+    background: linear-gradient(white, var(--blue));    
+    animation: small-circle 3s ease-in-out 0s infinite alternate;
+    -moz-animation: small-circle 3s ease-in-out 0s infinite alternate;
+    -ms-animation: small-circle 3s ease-in-out 0s infinite alternate;
+    -o-animation: small-circle 3s ease-in-out 0s infinite alternate;
+    -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
+}
 
-/*animations*/
+#medium_circle { 
+    display: flex;
+    grid-column: 1 / 2;
+    position: absolute;
+    z-index: 0;
+    top: 120px;
+    left: 20vw;
+    width: 20vw;
+    height: 20vw;
+    opacity: 0.7;
+    border-radius: 50%;
+    background: linear-gradient(var(--pink), var(--blue));
+    animation: rotation 8s linear infinite;
+    -moz-animation: rotation 8s linear infinite;
+    -ms-animation: rotation 8s linear infinite;
+    -o-animation: rotation 8s linear infinite;
+    -webkit-animation: rotation 8s linear infinite;
+}
+
+#big_circle { 
+    display: flex;
+    grid-column: 3 / 4;
+    position: absolute;
+    z-index: -1;
+    left: 25vw;
+    bottom: 0px;
+    height: 35vw;
+    width: 35vw;
+    opacity: 0.4;
+    border-radius: 50%;
+    background: linear-gradient(var(--pink), var(--blue));
+    animation: big-circle 15s ease-in-out 0s infinite alternate;
+    -moz-animation: big-circle 15s ease-in-out 0s infinite alternate;
+    -ms-animation: big-circle 15s ease-in-out 0s infinite alternate;
+    -o-animation: big-circle 15s ease-in-out 0s infinite alternate;
+    -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
+}
+
+#dotted_circle {
+    display: flex;
+    grid-column: 4 / 4;
+    position: absolute;
+    z-index: -1;
+    right: 50vw;
+    top: -30vh;
+    height: 100vw;
+    width: 100vw;
+    border-radius: 50%;
+    border: 3px dashed white;
+    animation: rotation 60s linear infinite;
+    -moz-animation: rotation 60s linear infinite;
+    -ms-animation: rotation 60s linear infinite;
+    -o-animation: rotation 60s linear infinite;
+    -webkit-animation: rotation 60s linear infinite;
+}
+
+#red_dotted_circle {
+    display: flex;
+    grid-column: 1 / 1;
+    position: absolute;
+    z-index: 0;
+    left: 60vw;
+    top: 30vh;
+    height: 90vw;
+    width: 90vw;
+    border-radius: 50%;
+    border: 3px dashed var(--pink);
+    animation: rotation 60s linear infinite;
+    -moz-animation: rotation 60s linear infinite;
+    -ms-animation: rotation 60s linear infinite;
+    -o-animation: rotation 60s linear infinite;
+    -webkit-animation: rotation 60s linear infinite;
+}
+
+#giant_circle {
+    display: flex;
+    grid-column: 1 / 2;
+    position: absolute;
+    z-index: -1;
+    top: 80vh;
+    right: 5vw;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--blue) 10px, var(--blue) 20px);
+}
+
+}
+
+
+/*============================================================
+==================other animations==========================*/
 
 @keyframes slideIn {
         100% {
@@ -720,17 +907,17 @@ footer p {
 @keyframes pulse {
         0% {
           transform: scale(0.95);
-          box-shadow: 0 0 0 0 #150941bb;
+          box-shadow: 0 0 0 0 #ffffffbb;
         }
         
         70% {
           transform: scale(1);
-          box-shadow: 0 0 0 10px #15094100;
+          box-shadow: 0 0 0 10px #ffffff00;
         }
         
         100% {
           transform: scale(0.95);
-          box-shadow: 0 0 0 0 #150941bb;
+          box-shadow: 0 0 0 0 #ffffffbb;
         }
     }
 
