@@ -227,7 +227,7 @@ nav a:hover::before {
     nav li {
         margin-left: 5em;
         margin: 0; 
-}
+    }
 
     nav a {
         opacity: 1;
@@ -337,14 +337,6 @@ nav a:hover::before {
     text-align: center;  
 }
 
-.insta-hover:hover{
-    font-size: 40pt;
-}
-
-.fa-hover:hover{
-    font-size: 40pt;
-}
-
 .content {
     display: flex;
     grid-column:  4/ 6;
@@ -367,6 +359,14 @@ nav a:hover::before {
     text-align: justify;
 }
 
+.port {
+    font-size: 3rem;
+    font-family: 'Faster One';
+    font-weight: 100;
+    text-align: center;
+    margin: auto;
+}
+
 span {
     content: '';
     width: 100%;
@@ -380,7 +380,6 @@ a {
 a:hover {
     color: #150941;
     font-weight: bold;
-    text-decoration: underline;
 }
 
 footer {
