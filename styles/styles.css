@@ -1,9 +1,9 @@
+/*======tutorial found on youtube for both mobile and desktop navbar, found here============
+===========https://www.youtube.com/watch?v=8QKOaTYvYUA - author: Kevin Powell=============*/
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 @import url("https://fonts.googleapis.com/css?family=K2D");
 @import url("https://fonts.googleapis.com/css?family=Faster One");
-
-/*tutorial found on youtube for both mobile and desktop navbar, found here:
-    https://www.youtube.com/watch?v=8QKOaTYvYUA - author: Kevin Powell*/
 
 
 :root {
@@ -19,7 +19,7 @@
 ============custom scrollbar styling here=================*/
 
 ::-webkit-scrollbar { /*===width of the scrollbar===*/
-    width: 3px;
+    width: 2px;
 }
   
 ::-webkit-scrollbar-track {  /*===color of track===*/
@@ -87,12 +87,6 @@ header {
 .nav-toggle-label span:hover::after {
     background-color: var(--pink);
 }
-
-/*.nav-toggle-label span:active,
-.nav-toggle-label span:active::before,
-.nav-toggle-label span:active::after {
-    background-color: var(--pink);
-}*/
 
 .nav-toggle-label span::before, 
 .nav-toggle-label span::after {
@@ -188,78 +182,77 @@ nav a:hover::before {
 
 @media screen and (min-width: 920px) { 
     
-    .nav-toggle-label {
-        display: none;
-    }
+.nav-toggle-label {
+    display: none;
+}
 
-    header {
-        display: grid;
-        grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
-        position: fixed;
-        height: 75px;
-    }
+header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+    position: fixed;
+    height: 75px;
+}
 
-    .logo {
-        display: block;
-        grid-column: 1 / 3;
-        align-items: center;
-        margin-left: 5em;
-        margin-top: 20px;
-        width: auto;
-        height: auto;
-    }
+.logo {
+    display: block;
+    grid-column: 1 / 3;
+    align-items: center;
+    margin-left: 5em;
+    margin-top: 20px;
+    width: auto;
+    height: auto;
+}
 
-    nav {
-        all: unset;
-        display: flex;
-        grid-column:  3/ 5;
-        justify-content: flex-end;
-        white-space: nowrap;  
-    }
+nav {
+    all: unset;
+    display: flex;
+    grid-column:  3/ 5;
+    justify-content: flex-end;
+    white-space: nowrap;  
+}
 
-    nav ul {
-        position: relative;
-        display: flex;
-        bottom: 8px;
-        margin-top: auto;    
-    }
+nav ul {
+    position: relative;
+    display: flex;
+    bottom: 8px;
+    margin-top: auto;    
+}
 
-    nav li {
-        margin-left: 5em;
-        margin: 0; 
-    }
+nav li {
+    margin-left: 5em;
+    margin: 0; 
+}
 
-    nav a {
-        opacity: 1;
-        position: relative;
-    }
+nav a {
+    opacity: 1;
+    position: relative;
+}
 
-    nav a::before {
-        content: '';
-        display: block;
-        height: 5px;
-        background: var(--pink);
-        position: absolute;
-        top: -0.5em;
-        left: 0;
-        right: 0;
-        transform: scale(0, 1);
-        transform-origin: right;
-        transition: transform ease-in-out 250ms;
-    }
+nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: var(--pink);
+    position: absolute;
+    top: -0.5em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transform-origin: right;
+    transition: transform ease-in-out 250ms;
+}
 
-    nav a:hover::before {
-        transform: scale(1, 1);
-    }
+nav a:hover::before {
+    transform: scale(1, 1);
+}
 }
 
 /*======================end of==============================
 ===============desktop navbar styling here================*/
-
-
+ 
 
 /*==========================================================
-================desktop styling here======================*/
+==================desktop styling here====================*/
 
 
 .card {
@@ -267,14 +260,14 @@ nav a:hover::before {
     z-index: 1;
     position: relative;
     margin: auto;
-    top: 210px;
-    height: 60vh;
+    top: 175px;
+    height: 700px;
     width: 80%;
     box-shadow: 0px 20px 10px -12px rgb(0, 0, 0);
     border-radius: 30px;
     opacity: 0.9;
     display: grid;
-    grid-template-columns: auto minmax(100px, max-content) repeat(auto-fit, 200px) 20%;
+    grid-template-columns: 25% 25% 25% 25%;
 }
 
 .wrapper {
@@ -283,7 +276,7 @@ nav a:hover::before {
     display: flex;
     grid-column:  1/ 4;
     justify-content: flex-start;
-    top: 10px;
+    top: 0px;
 }
 
 .slideIn {
@@ -311,13 +304,12 @@ nav a:hover::before {
 
 .selfie {
     display: flex;
-    grid-column:  3/ 4;
+    grid-column: 2 / 3;
     position: relative;
-    justify-items: center;
-    margin: 0 auto 0 auto;
-    top: 175px;
-    width: 175px;
-    height: 175px;
+    margin-left: 120%;
+    top: 200px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border: 2px solid white;
     border-radius: 50%;
@@ -328,9 +320,11 @@ nav a:hover::before {
 
 .socialmedia {
     display: flex;
-    grid-column:  3/ 4;
-    justify-content: space-evenly;
-    top: 200px;
+    grid-column: 2 / 3;
+    margin-left: 146%;
+    justify-content: center;
+    gap: 30px;
+    top: 260px;
     color: var(--blue);
     position: inherit;
     font-size: 30pt;
@@ -339,24 +333,26 @@ nav a:hover::before {
 
 .content {
     display: flex;
-    grid-column:  4/ 6;
-    bottom: 10px;
+    grid-column: 2 / 2;
+    margin: 0 auto;
+    bottom: 50px;
     height: 200px;
-    width: 400px;
-    font-size: 1.1rem;
+    width: 100%;
+    font-size: 1.2rem;
     position: relative;
-    text-align: justify;
+    text-align: right;
 }
 
 .contact_info {
     display: block;
-    grid-column:  4/ 6;
+    grid-column: 2 / 2;
+    margin: 0 auto;
     bottom: 75px;
     height: 200px;
-    width: 400px;
+    width: 100%;
     font-size: 1.2rem;
     position: relative;
-    text-align: justify;
+    text-align: right;
 }
 
 .port {
@@ -384,25 +380,19 @@ a:hover {
 
 .contact_form {
     display: block;
-    grid-column: 2 / 3;
-    max-width: 600px;
+    grid-column: 2 / 4;
     position: relative;
-    margin: 0 auto 0 auto;
-    top: 140px;
-    align-items: center;
-    justify-content: center;
+    margin: auto;
+    width: 100%;
 }
 
 .form_tag {
     display: block;
-    grid-column: 2 / 3;
+    grid-column: 2 / 4;
     position: relative;
-    margin: 0 auto 0 auto;
-    top: 120px;
-    left: 20px;
-    font-size: 1rem;
-    width: 600px;
-    font-weight: normal;
+    margin: auto;
+    width: 500px;
+    top: 80px;
     text-align: center;
 }
 
@@ -414,7 +404,6 @@ a:hover {
 
 .contact_text {
     width: 100%;
-    margin: 10px;
     padding: 15px;
     outline: none;
     border: none;
@@ -433,11 +422,11 @@ a:hover {
 .message {
     display: block;
     width: 97%;
-    margin: 10px;
+    margin-top: 10px;
     padding: 20px;
     resize: none;
     outline: none;
-    height: 75px;
+    height: 150px;
     background: none;
     border: 5px solid var(--blue);
     border-radius: 10px;
@@ -454,7 +443,7 @@ a:hover {
 .submit_btn {
     display: block;
     width: 100px;
-    margin: 10px;
+    margin-top: 10px;
     padding: 20px;
     outline: none;
     border: 5px solid var(--blue);
@@ -529,33 +518,32 @@ html, body{
     position: relative;
     margin: 0 auto 0 auto;
     top: 80px;
-    height: 900px;
-    width: 80%;
+    height: 800px;
+    width: 90%;
     box-shadow: 0px 20px 10px -12px rgb(0, 0, 0);
     border-radius: 30px;
     opacity: 0.9;
     display: grid;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 33% 33% 33%;
+    grid-template-columns: 25% 25% 25% 25%;
 }
 
 .wrapper {
     position: relative;
     width: 100%;
     display: flex;
-    grid-column:  1/ 4;
+    grid-column:  1 / 4;
     justify-content: flex-start;
     top: 10px;
 }
 
 .slideIn {
-    color: white;
+    color: var(--blue);
     position: relative;
     z-index: 2;
-    font-size: 3.5rem;
+    font-size: 3em;
     text-align: left;
     left: -2000px;
-    width: 60%;
+    width: 70%;
     opacity: 1;
     animation: slideIn 0.25s forwards;
     -webkit-animation: slideIn 0.25s forwards;
@@ -564,7 +552,7 @@ html, body{
 }
 
 .pgheader_hr {
-    background-color: white;
+    background-color: var(--blue);
     border: 0px;
     height: 5px;
     width: auto;
@@ -574,15 +562,14 @@ html, body{
 
 .selfie {
     display: flex;
-    grid-column:  1/ 3;
+    grid-column:  2 / 3;
     position: relative;
     justify-items: center;
-    margin: 0 auto 0 auto;
-    right: 0vw;
-    top: 0vh;
+    margin: 0 auto;
+    top: 30px;
     background-color: white;
-    width: 120px;
-    height: 120px;
+    width: 140px;
+    height: 140px;
     object-fit: cover;
     border: 2px solid white;
     border-radius: 50%;
@@ -593,14 +580,15 @@ html, body{
 
 .socialmedia {
     display: flex;
-    grid-column:  1/ 3;
-    justify-content: space-evenly;
-    top: 0px;
-    right: 0vw;
+    grid-column:  2 / 3;
+    justify-content: center;
+    margin: 0 auto;
+    gap: 0px;
+    top: 45px;
     color: var(--blue);
-    position: inherit;
-    font-size: 25pt;
-    text-align: center; 
+    position: relative;
+    font-size: 30pt;
+    text-align: justify; 
 }
 
 .insta-hover:hover{
@@ -613,30 +601,30 @@ html, body{
 
 .content {
     display: flex;
-    grid-column:  1/ 3;
+    grid-column:  1 / 4;
     position: relative;
     justify-content: center;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     right: 0vw;
-    top: 0;
+    top: 30px;
+    padding: 20%;
     bottom: 0px;
     height: 10%;
-    width: 80%;
+    width: 100%;
     font-size: 1em;
     text-align: left;
 }
 
 .contact_info {
     display: block;
-    grid-column:  1/ 3;
+    grid-column:  1 / 4;
     position: relative;
     justify-content: center;
-    margin: 0 auto 0 auto;
-    right: 0vw;
-    top: 0;
-    bottom: 0px;
-    height: 10%;
-    width: 80%;
+    padding: 20%;
+    margin: 0 auto;
+    bottom: 50px;
+    height: 200px;
+    width: 100%;
     font-size: 1em;
     text-align: left;
 }
@@ -653,31 +641,23 @@ a:hover {
 
 .contact_form {
     display: block;
-    grid-column: 1 / 3;
+    grid-column: 1 / 4;
     position: relative;
-    margin: 0 auto;
-    top: 0;
-    max-width: 0;
-    min-width: 250%;
-    justify-content: center;
-    
+    margin: 0 auto 0 auto;
+    padding: 5%;
+    width: 105%;
 }
 
 .form_tag {
-    display: flex;
-    grid-column: 1 / 3;
-    grid-row: 1 / 1;
+    display: block;
+    grid-column: 1 / 4;
+    padding-left: 35px;
     position: relative;
-    margin: 0;
-    justify-content: center;
+    margin: 0 auto;
+    width: 100%;
     top: 0px;
-    left: 0px;
-    font-size: 1rem;
-    width: 100vw;
-    font-weight: normal;
-    text-align: center;
+    text-align: justify;
 }
-
 
 ::placeholder {
     color: white;
@@ -705,8 +685,9 @@ a:hover {
 
 .message {
     display: block;
-    width: 97%;
+    width: 99%;
     margin: 5px;
+    margin-top: 10px;
     padding: 10px;
     resize: none;
     outline: none;
@@ -728,6 +709,7 @@ a:hover {
     display: block;
     width: 100px;
     margin: 5px;
+    margin-top: 10px;
     padding: 20px;
     outline: none;
     border: 5px solid var(--blue);
@@ -816,6 +798,89 @@ footer p {
 
 /*====================end of================================
 ================mobile styling here=======================*/
+
+
+
+/*==========================================================
+================tablet styling here=======================*/
+
+
+@media screen and (max-width: 1698px) and (min-device-width: 920px) and (orientation: portrait) {
+
+.card {
+    background-color: var(--pink);
+    z-index: 1;
+    position: relative;
+    margin: auto;
+    top: 300px;
+    height: 800px;
+    width: 80%;
+    box-shadow: 0px 20px 10px -12px rgb(0, 0, 0);
+    border-radius: 30px;
+    opacity: 0.9;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.selfie {
+    display: flex;
+    grid-column: 2 / 3;
+    position: relative;
+    margin-left: 120%;
+    top: 200px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid white;
+    border-radius: 50%;
+    border-radius: 300px;
+    box-shadow: 0 0 0 0 white;
+    animation: pulse 2s infinite;
+}
+    
+.socialmedia {
+    display: flex;
+    grid-column: 2 / 3;
+    padding-left: 50px;
+    justify-content: center;
+    gap: 30px;
+    top: 300px;
+    color: var(--blue);
+    position: inherit;
+    font-size: 30pt;
+    text-align: center;  
+}
+    
+.content {
+    display: flex;
+    grid-column: 1 / 2;
+    margin: 0 auto;
+    bottom: 130px;
+    height: 200px;
+    padding-left: 150px;
+    width: 120%;
+    font-size: 1.2rem;
+    position: relative;
+    text-align: right;
+}
+    
+.contact_info {
+    display: block;
+    grid-column: 1 / 2;
+    margin: 0 auto;
+    bottom: 100px;
+    padding-left: 90px;
+    height: 200px;
+    width: 150%;
+    font-size: 1.2rem;
+    position: relative;
+    text-align: right;
+}  
+}
+
+/*====================end of================================
+================tablet styling here=======================*/
+
 
 
 
@@ -942,8 +1007,6 @@ footer p {
 
 @media screen and (max-width:920px) {
 
-
-
 #small_circle { 
     display: flex;
     grid-column: 1 / 2;
@@ -1049,7 +1112,6 @@ footer p {
     border-radius: 50%;
     background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--blue) 10px, var(--blue) 20px);
 }
-
 }
 
 
