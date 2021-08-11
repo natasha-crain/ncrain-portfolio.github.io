@@ -464,7 +464,7 @@ a:hover {
     border: 5px solid var(--blue);
     border-radius: 10px;
     color: white;
-    font-family: 'Public Sans';
+    font-family: 'Public Sans' !important;
     transition: 0.5s ease-in-out;
 }
 
@@ -732,7 +732,6 @@ html, body{
     -o-animation-delay: 0.75s;
 }
 
-
 .pgheader_hr {
     background-color: var(--blue);
     border: 0px;
@@ -906,7 +905,7 @@ a:hover {
     border: 5px solid var(--blue);
     border-radius: 10px;
     color: white;
-    font-family: 'K2D';
+    font-family: 'Public Sans' !important;
     transition: 0.5s ease-in-out;
 }
 
