@@ -1,15 +1,25 @@
+/*WELCOME PAGE CSS*/
+/*codepen for background animation inspiration found here: https://codepen.io/joyanna/pen/NWGYLNW */
+
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
-@import url("https://fonts.googleapis.com/css?family=K2D");
-@import url("https://fonts.googleapis.com/css?family=Faster One");
+@import url('https://fonts.googleapis.com/css?family=Public Sans');
+@import url('https://fonts.googleapis.com/css?family=Fredoka One');
 
 :root {
-    background-color: #150941;
-    color:white;
-    font-family: 'K2D';
+    background: linear-gradient(#00192f, #003054);
+    color: white;
+    font-family: 'Public Sans';
     --bg_opacity: #f7195000;
-    --pink: #f71950;
-    --blue: #150941;
+    --pink: #cc008d;
+    --blue: #00afd2;
+    --dark: #00192f;
+    --grad: linear-gradient(#00192f 0%, #003054 100%);
+    --opacity: rgba(0, 0, 0, 0);
 }
+
+/*==========================================================
+=====================desktop CSS==========================*/
+
 
 html, body{
     min-height: 100vh;
@@ -31,9 +41,14 @@ body {
     justify-content: center;
     margin: 0 auto 0 auto;
     z-index: 1;
-    font-family: 'Faster One';
-    font-size: 8em;
-    color: var(--pink);
+    font-family: 'Fredoka One';
+    font-weight: normal;
+    text-transform: capitalize;    
+    font-size: 10rem;
+    background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
     text-align: center;
     margin-top: 350px;
 }
@@ -41,18 +56,19 @@ body {
 .welcometag {
     text-align: center;
     position: relative;
-    font-family: 'K2D';
-    color: white;
+    font-family: 'Public Sans';
+    color: var(--blue);
     font-weight: bold;
-    text-transform: uppercase;
-    font-size: 0.3em;
+    text-transform: none;
+    font-size: 2.75rem;
     text-decoration: none;      
 }
 
 .welcometag:hover{
     color: var(--pink);
-    font-size: 35pt;
+    font-size: 2.5rem;
     transition: 0.75s;
+    font-weight: bold;
 }
 
 .blink {
@@ -80,7 +96,7 @@ body {
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background: linear-gradient(white, var(--blue));    
+    background: linear-gradient(var(--pink), var(--blue));    
     animation: small-circle 3s ease-in-out 0s infinite alternate;
     -moz-animation: small-circle 3s ease-in-out 0s infinite alternate;
     -ms-animation: small-circle 3s ease-in-out 0s infinite alternate;
@@ -136,7 +152,7 @@ body {
     height: 1000px;
     width: 1000px;
     border-radius: 50%;
-    border: 3px dashed white;
+    border: 3px dashed var(--pink);
     animation: rotation 60s linear infinite;
     -moz-animation: rotation 60s linear infinite;
     -ms-animation: rotation 60s linear infinite;
@@ -144,7 +160,7 @@ body {
     -webkit-animation: rotation 60s linear infinite;
 }
 
-#red_dotted_circle {
+#blue_dotted_circle {
     display: flex;
     grid-column: 1 / 1;
     position: absolute;
@@ -154,7 +170,7 @@ body {
     height: 1000px;
     width: 1000px;
     border-radius: 50%;
-    border: 3px dashed var(--pink);
+    border: 3px dashed var(--blue);
     animation: rotation 60s linear infinite;
     -moz-animation: rotation 60s linear infinite;
     -ms-animation: rotation 60s linear infinite;
@@ -172,13 +188,217 @@ body {
     width: 700px;
     height: 700px;
     border-radius: 50%;
-    background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--blue) 10px, var(--blue) 20px);
+    background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--opacity) 10px, var(--opacity) 20px);
 }
 
+#radius_circle {
+    display: flex;
+    grid-column: 1 / 2;
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    left: 500px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid var(--pink); 
+}
+
+#line_anim {
+    display: flex;
+    grid-column: 4 / 4;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    right: 20px;
+    width: 2px;
+    height: 1px;
+    background: var(--blue);
+    animation: line_anim 12s 0s ease-in-out alternate infinite;
+    -webkit-animation: line_anim 12s 0s ease-in-out alternate infinite;
+    -moz-animation: line_anim 12s 0s ease-in-out alternate infinite;
+    -ms-animation: line_anim 12s 0s ease-in-out alternate infinite;
+    -o-animation: line_anim 12s 0s ease-in-out alternate infinite;
+}
+
+/*======================end of==============================
+=====================desktop CSS==========================*/
 
 
 /*==========================================================
-================mobile styling here=======================*/
+======================tablet CSS==========================*/
+
+@media screen and (max-width: 1698px) and (min-device-width: 920px) and (orientation: portrait) {
+
+    .welcome {
+        display: block;
+        grid-column: 2 / 4;
+        justify-content: center;
+        margin: 0 auto 0 auto;
+        z-index: 1;
+        font-family: 'Fredoka One';
+        font-weight: normal;
+        text-transform: capitalize;    
+        font-size: 10rem;
+        background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-align: center;
+        margin-top: 500px;
+    }
+
+    .circles {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+    
+    #small_circle { 
+        display: flex;
+        grid-column: 1 / 1;
+        position: absolute;
+        margin: 0 auto;
+        z-index: 0;
+        top: 0px;
+        left: 0px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background: linear-gradient(var(--pink), var(--blue));    
+        animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -moz-animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -ms-animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -o-animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
+    }
+    
+    #medium_circle { 
+        display: flex;
+        grid-column: 1 / 2;
+        position: absolute;
+        z-index: 0;
+        top: 120px;
+        left: 200px;
+        width: 200px;
+        height: 200px;
+        opacity: 0.7;
+        border-radius: 50%;
+        background: linear-gradient(var(--pink), var(--blue));
+        animation: rotation 8s linear infinite;
+        -moz-animation: rotation 8s linear infinite;
+        -ms-animation: rotation 8s linear infinite;
+        -o-animation: rotation 8s linear infinite;
+        -webkit-animation: rotation 8s linear infinite;
+    }
+    
+    #big_circle { 
+        display: flex;
+        grid-column: 3 / 4;
+        position: absolute;
+        z-index: -1;
+        left: 200px;
+        bottom: 0px;
+        height: 400px;
+        width: 400px;
+        opacity: 0.4;
+        border-radius: 50%;
+        background: linear-gradient(var(--pink), var(--blue));
+        animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -moz-animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -ms-animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -o-animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
+    }
+    
+    #dotted_circle {
+        display: flex;
+        grid-column: 4 / 4;
+        position: absolute;
+        z-index: -1;
+        right: -350px;
+        top: 300px;
+        height: 1000px;
+        width: 1000px;
+        border-radius: 50%;
+        border: 3px dashed var(--pink);
+        animation: rotation 60s linear infinite;
+        -moz-animation: rotation 60s linear infinite;
+        -ms-animation: rotation 60s linear infinite;
+        -o-animation: rotation 60s linear infinite;
+        -webkit-animation: rotation 60s linear infinite;
+    }
+    
+    #blue_dotted_circle {
+        display: flex;
+        grid-column: 1 / 1;
+        position: absolute;
+        z-index: 0;
+        left: -300px;
+        top: -500px;
+        height: 1000px;
+        width: 1000px;
+        border-radius: 50%;
+        border: 3px dashed var(--blue);
+        animation: rotation 60s linear infinite;
+        -moz-animation: rotation 60s linear infinite;
+        -ms-animation: rotation 60s linear infinite;
+        -o-animation: rotation 60s linear infinite;
+        -webkit-animation: rotation 60s linear infinite;
+    }
+    
+    #giant_circle {
+        display: flex;
+        grid-column: 1 / 2;
+        position: absolute;
+        z-index: -1;
+        top: 1000px;
+        left: -100px;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--opacity) 10px, var(--opacity) 20px);
+    }
+    
+    #radius_circle {
+        display: flex;
+        grid-column: 2 / 3;
+        position: absolute;
+        z-index: 0;
+        top: 50px;
+        left: 400px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid var(--pink); 
+    }
+    
+    #line_anim {
+        display: flex;
+        grid-column: 4 / 4;
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        right: 20px;
+        width: 2px;
+        height: 1px;
+        background: var(--blue);
+        animation: line_anim 12s 0s ease-in-out alternate infinite;
+        -webkit-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        -moz-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        -ms-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        -o-animation: line_anim 12s 0s ease-in-out alternate infinite;
+    }
+}
+
+/*======================end of==============================
+======================tablet CSS==========================*/
+
+
+/*==========================================================
+======================mobile CSS==========================*/
 
 @media screen and (max-width:921px) {
 
@@ -195,9 +415,12 @@ body {
         justify-content: center;
         margin: 0 auto 0 auto;
         z-index: 1;
-        font-family: 'Faster One';
-        font-size: 3.5rem;
-        color: var(--pink);
+        font-family: 'Londrina Outline';
+        font-size: 4rem;
+        background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
         text-align: center;
         margin-top: 40vh;
     }
@@ -205,20 +428,23 @@ body {
     .welcometag {
         text-align: center;
         position: relative;
-        font-family: 'K2D';
-        color: white;
-        font-weight: bold;
-        text-transform: uppercase;
+        font-family: 'Source Sans Pro';
+        color: var(--blue);
+        font-weight: normal;
+        text-transform: none;
         font-size: 1.2rem;
         text-decoration: none;
     }
-        
+    
     .welcometag:hover{
         color: var(--pink);
+        font-size: 1rem;
+        transition: 0.75s;
+        font-weight: bold;
     }
         
     .blink {
-        color: var(--pink);
+        color: var(--blue);
         position: relative;
         display: inline-block;
         animation: blink-animation 1s linear infinite;
@@ -242,7 +468,7 @@ body {
         height: 7vw;
         width: 7vw;
         border-radius: 50%;
-        background: linear-gradient(white, var(--blue));    
+        background: linear-gradient(var(--pink), var(--blue));   
         animation: small-circle 3s ease-in-out 0s infinite alternate;
         -moz-animation: small-circle 3s ease-in-out 0s infinite alternate;
         -ms-animation: small-circle 3s ease-in-out 0s infinite alternate;
@@ -261,7 +487,7 @@ body {
         height: 20vw;
         opacity: 0.7;
         border-radius: 50%;
-        background: linear-gradient(var(--pink), var(--blue));
+        background: linear-gradient(var(--pink), var(--blue));        
         animation: rotation 8s linear infinite;
         -moz-animation: rotation 8s linear infinite;
         -ms-animation: rotation 8s linear infinite;
@@ -298,7 +524,7 @@ body {
         height: 100vw;
         width: 100vw;
         border-radius: 50%;
-        border: 3px dashed white;
+        border: 3px dashed var(--blue);
         animation: rotation 60s linear infinite;
         -moz-animation: rotation 60s linear infinite;
         -ms-animation: rotation 60s linear infinite;
@@ -306,7 +532,7 @@ body {
         -webkit-animation: rotation 60s linear infinite;
     }
     
-    #red_dotted_circle {
+    #blue_dotted_circle {
         display: flex;
         grid-column: 1 / 1;
         position: absolute;
@@ -316,7 +542,7 @@ body {
         height: 90vw;
         width: 90vw;
         border-radius: 50%;
-        border: 3px dashed var(--pink);
+        border: 3px dashed var(--pink);        
         animation: rotation 60s linear infinite;
         -moz-animation: rotation 60s linear infinite;
         -ms-animation: rotation 60s linear infinite;
@@ -334,18 +560,60 @@ body {
         width: 500px;
         height: 500px;
         border-radius: 50%;
-        background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--blue) 10px, var(--blue) 20px);
+        background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--opacity) 10px, var(--opacity) 20px);
+    }
+
+    #radius_circle {
+        display: flex;
+        grid-column: 1 / 1;
+        position: absolute;
+        z-index: 100;
+        bottom: 90px;
+        left: 0px;
+        margin: 0px;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 2px solid var(--blue);
+    }
+    
+    #radius_circle_2 {
+        display: flex;
+        grid-column: 1 / 1;
+        position: absolute;
+        z-index: 100;
+        top: 10px;
+        left: 50px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid var(--pink); 
+    }
+    
+    #line_anim {
+        display: flex;
+        grid-column: 4 / 4;
+        position: absolute;
+        z-index: 100;
+        top: 0;
+        right: 10px;
+        width: 2px;
+        height: 1px;
+        background: var(--blue);
+        animation: line_anim 10s 0s ease-in-out alternate infinite;
+        -webkit-animation: line_anim 10s 0s ease-in-out alternate infinite;
+        -moz-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        -ms-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        -o-animation: line_anim 12s 0s ease-in-out alternate infinite;
     }
 }
 
-/*====================end of================================
-================mobile styling here=======================*/
+/*======================end of==============================
+======================mobile CSS==========================*/
 
 
-
-
-/*==========================================================
-===================other animations=======================*/
+/*============================================================
+====================keyframes animations====================*/
 
 @keyframes rotation {
         from {
@@ -382,3 +650,46 @@ body {
             opacity: 1;
         }
       }
+
+@keyframes rollIn {
+        0% {
+            transform: translate(0px, 0px) rotate(0deg);
+        }
+        50% {
+            transform: translate(250px, 0px) rotate(180deg);
+        }
+        100% {
+            transform: translate(0px, 0px) rotate(360deg);
+        }
+    }
+
+@keyframes line_anim {
+        0% {
+            transform: scaleY(0.0);
+        }
+        50% {
+            transform: scaleY(1500.0);
+        }
+        100% {
+            transform: scaleY(0.0);
+        }
+    }
+
+/*mobile animation for line_anim*/
+@media screen and (max-width:921px) {
+
+    @keyframes line_anim {
+        0% {
+            transform: scaleY(0.0);
+        }
+        50% {
+            transform: scaleY(500.0);
+        }
+        100% {
+            transform: scaleY(0.0);
+        }
+    }
+}
+
+/*========================end of==============================
+====================keyframes animations====================*/

@@ -1,3 +1,6 @@
+/*script for page transitions*/
+/*transitions created following a by Tyler Potts found here: https://www.youtube.com/watch?v=ckJ7gdIeebc*/
+
 window.onload = () => {
     const anchors = document.querySelectorAll('a');
     const transition_el = document.querySelector('.transition');

@@ -1,29 +1,35 @@
-/*======tutorial found on youtube for both mobile and desktop navbar, found here============
-===========https://www.youtube.com/watch?v=8QKOaTYvYUA - author: Kevin Powell=============*/
+/*MAIN CSS PAGE*/
+/*tutorial found on youtube for both mobile and desktop navbar found here: https://www.youtube.com/watch?v=8QKOaTYvYUA - author: Kevin Powel*/
+/*codepen for class .slide_In found here: https://codepen.io/blackjacques/pen/GrNMxv */
+/*codepen for background animation inspiration found here: https://codepen.io/joyanna/pen/NWGYLNW */
 
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
-@import url("https://fonts.googleapis.com/css?family=K2D");
-@import url("https://fonts.googleapis.com/css?family=Faster One");
+@import url('https://fonts.googleapis.com/css?family=Public Sans');
+@import url('https://fonts.googleapis.com/css?family=Fredoka One');
 
 
 :root {
-    background-color: #150941;
-    color:white;
-    font-family: 'K2D';
+    background: linear-gradient(#00192f 0%, #003054 100%);
+    color: white;
+    font-family: 'Public Sans';
     --bg_opacity: #f7195000;
-    --pink: #f71950;
-    --blue: #150941;
+    --pink: #cc008d;
+    --blue: #00afd2;
+    --dark: #00192f;
+    --grad: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
+    --opacity: rgba(0, 0, 0, 0);
 }
 
+
 /*==========================================================
-============custom scrollbar styling here=================*/
+====================custom scrollbar======================*/
 
 ::-webkit-scrollbar { /*===width of the scrollbar===*/
     width: 2px;
 }
   
 ::-webkit-scrollbar-track {  /*===color of track===*/
-    background: var(--blue);
+    background: var(--dark);
 }
   
 ::-webkit-scrollbar-thumb { /*===color of handle===*/
@@ -31,11 +37,12 @@
 }
   
 ::-webkit-scrollbar-thumb:hover { /*===color of handle on hover===*/
-    background: #720b25;
+    background: #500037;
 }
 
-/*===================end of=================================
-============custom scrollbar styling here=================*/
+/*======================end of==============================
+===================custom scrollbar=======================*/
+
 
 html, body{
     min-height: 100vh;
@@ -44,11 +51,12 @@ html, body{
     position: relative;
 }
 
+
 /*==========================================================
-==========mobile/responsive navbar styling here===========*/
+==============mobile/responsive navbar====================*/
 
 header {
-    background-color: var(--blue);
+    background-color: var(--dark);
     text-align: center;
     position: fixed;
     width: 100%;
@@ -75,7 +83,7 @@ header {
 .nav-toggle-label span::before, 
 .nav-toggle-label span::after {
     display: block;
-    background-color: white;
+    background-color: var(--pink);
     height: 2px;
     width: 2em;
     border-radius: 2px;
@@ -106,7 +114,8 @@ header {
     height: 50%;
     width: auto;
     margin-left: -80px;
-    margin-top: 14px; 
+    margin-top: 14px;
+    cursor: pointer;
 }
 
 nav {
@@ -114,7 +123,7 @@ nav {
     text-align: right;
     top: 100%;
     right: 0;
-    background-color: var(--pink);
+    background-color: var(--dark);
     width: 100%;
     height: 100vmax;
     transform: scale(1, 0);
@@ -137,7 +146,7 @@ nav li {
 nav a {
     text-decoration: none;
     font-size: 1.2rem;
-    font-family: 'K2D';
+    font-family: 'Public Sans';
     opacity: 0;
     transition: opacity 100ms ease-in-out;
 }
@@ -173,12 +182,11 @@ nav a:hover::before {
 }
 
 /*=======================end of=============================
-==========mobile/responsive navbar styling here===========*/
-
+====================mobile/responsive=====================*/
 
 
 /*==========================================================
-===============desktop navbar styling here================*/
+======================desktop navbar======================*/
 
 @media screen and (min-width: 920px) { 
     
@@ -191,16 +199,18 @@ header {
     grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
     position: fixed;
     height: 75px;
+    background-color: var(--opacity);
 }
 
 .logo {
     display: block;
     grid-column: 1 / 3;
     align-items: center;
-    margin-left: 5em;
+    margin-left: 6em;
     margin-top: 20px;
     width: auto;
-    height: auto;
+    height: 40%;
+    cursor: pointer;
 }
 
 nav {
@@ -247,23 +257,22 @@ nav a:hover::before {
 }
 }
 
-/*======================end of==============================
-===============desktop navbar styling here================*/
+/*========================end of===============================
+======================desktop navbar=========================*/
  
 
 /*==========================================================
-==================desktop styling here====================*/
-
+======================desktop CSS=========================*/
 
 .card {
-    background-color: var(--pink);
+    background-color: var(--dark);
     z-index: 1;
     position: relative;
     margin: auto;
     top: 175px;
     height: 700px;
     width: 80%;
-    box-shadow: 0px 20px 10px -12px rgb(0, 0, 0);
+    box-shadow: 20px 20px 10px -12px var(--pink);
     border-radius: 30px;
     opacity: 0.9;
     display: grid;
@@ -280,7 +289,12 @@ nav a:hover::before {
 }
 
 .slideIn {
-    color: var(--blue);
+    font-family: 'Fredoka One';
+    font-weight: normal;
+    background: var(--grad);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
     position: relative;
     z-index: 2;
     font-size: 50pt;
@@ -289,12 +303,18 @@ nav a:hover::before {
     opacity: 1;
     animation: slideIn 0.25s forwards;
     -webkit-animation: slideIn 0.25s forwards;
+    -moz-animation: slideIn 0.25s forwards;
+    -ms-animation: slideIn 0.25s forwards;
+    -o-animation: slideIn 0.25s forwards;
     animation-delay: 0.75s;
     -webkit-animation-delay: 0.75s;
+    -moz-animation-delay: 0.75s;
+    -ms-animation-delay: 0.75s;
+    -o-animation-delay: 0.75s;
 }
 
 .pgheader_hr {
-    background-color: var(--blue);
+    background: var(--grad);
     border: 0px;
     height: 8px;
     width: auto;
@@ -307,7 +327,7 @@ nav a:hover::before {
     grid-column: 2 / 3;
     position: relative;
     margin-left: 120%;
-    top: 200px;
+    top: 225px;
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -316,16 +336,19 @@ nav a:hover::before {
     border-radius: 300px;
     box-shadow: 0 0 0 0 white;
     animation: pulse 2s infinite;
+    -webkit-animation: pulse 2s infinite;
+    -moz-animation: pulse 2s infinite;
+    -ms-animation: pulse 2s infinite;
+    -o-animation: pulse 2s infinite;
 }
 
 .socialmedia {
     display: flex;
     grid-column: 2 / 3;
-    margin-left: 146%;
+    margin-left: 147%;
     justify-content: center;
     gap: 30px;
-    top: 260px;
-    color: var(--blue);
+    top: 270px;
     position: inherit;
     font-size: 30pt;
     text-align: center;  
@@ -350,17 +373,24 @@ nav a:hover::before {
     bottom: 75px;
     height: 200px;
     width: 100%;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     position: relative;
     text-align: right;
 }
 
 .port {
-    font-size: 3rem;
-    font-family: 'Faster One';
-    font-weight: 100;
-    text-align: center;
+    display: flex;
+    grid-column: 1 / 4;
+    position: relative;
     margin: auto;
+    left: 200px;
+    font-size: 2em;
+    font-family: 'Fredoka One';
+    background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
 }
 
 span {
@@ -374,7 +404,10 @@ a {
 }
 
 a:hover {
-    color: #150941;
+    background: var(--grad);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
     font-weight: bold;
 }
 
@@ -398,7 +431,7 @@ a:hover {
 
 ::placeholder {
     color: white;
-    font-family: 'K2D';
+    font-family: 'Public Sans';
     font-size: 1rem;
 }
 
@@ -457,23 +490,33 @@ a:hover {
 }
 
 .submit_btn:hover {
-    background: var(--blue);
-    color:var(--pink);
     cursor: pointer;
+    border: 5px solid var(--dark);
+    border-radius: 10px;
+    background: var(--grad);
+    color: white;
     transition: 0.5s ease-out;
 }
 
 .thankyou {
     display: block;
-    grid-column:  2/ 3;
-    top: 250px;
-    height: 200px;
-    width: 400px;
-    font-size: 1.1rem;
+    grid-column: 1 / 4;
     position: relative;
+    left: 17%;
+    top: 200px;
+    font-size: 2em;
+    font-family: 'Fredoka One';
+    background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
     text-align: center;
 }
 
+.thankyou p {
+    color: white;
+    font-family: 'Public Sans';
+}
 
 footer {
     background-color: #f7195000;
@@ -487,7 +530,6 @@ footer {
 }
 
 footer p {
-    font-family: 'K2D';
     text-align: center;
     line-height: 50%;
     color: var(--pink);
@@ -496,12 +538,140 @@ footer p {
     text-shadow: #fff;
 }
 
-/*====================end of================================
-================desktop styling here======================*/
+/*======================end of==============================
+=====================desktop CSS==========================*/
 
 
 /*==========================================================
-================mobile styling here=======================*/
+=======================tablet CSS=========================*/
+
+
+@media screen and (max-width: 1698px) and (min-device-width: 920px) and (orientation: portrait) {
+
+    .card {
+        background-color: var(--dark);
+        z-index: 1;
+        position: relative;
+        margin: auto;
+        top: 300px;
+        height: 800px;
+        width: 80%;
+        box-shadow: 20px 20px 10px -12px var(--pink);
+        border-radius: 30px;
+        opacity: 0.9;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+    
+    .selfie {
+        display: flex;
+        grid-column: 2 / 3;
+        position: relative;
+        margin-left: 120%;
+        top: 200px;
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border: 2px solid white;
+        border-radius: 50%;
+        border-radius: 300px;
+        box-shadow: 0 0 0 0 white;
+        animation: pulse 2s infinite;
+    }
+        
+    .socialmedia {
+        display: flex;
+        grid-column: 2 / 3;
+        padding-left: 50px;
+        justify-content: center;
+        gap: 30px;
+        top: 300px;
+        position: inherit;
+        font-size: 30pt;
+        text-align: center;  
+    }
+        
+    .content {
+        display: flex;
+        grid-column: 1 / 2;
+        margin: 0 auto;
+        bottom: 130px;
+        height: 200px;
+        padding-left: 150px;
+        width: 120%;
+        font-size: 1.2rem;
+        position: relative;
+        text-align: right;
+    }
+        
+    .contact_info {
+        display: block;
+        grid-column: 1 / 2;
+        margin: 0 auto;
+        bottom: 100px;
+        padding-left: 90px;
+        height: 200px;
+        width: 150%;
+        font-size: 1.2rem;
+        position: relative;
+        text-align: right;
+    } 
+    
+    .port {
+        display: flex;
+        grid-column: 1 / 4;
+        position: relative;
+        margin: auto;
+        left: 110px;
+        font-size: 2em;
+        font-family: 'Fredoka One';
+        background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-align: center;
+    }
+    
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    
+    a:hover {
+        background: var(--grad);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-weight: bold;;
+    }
+    
+    .thankyou {
+        display: block;
+        grid-column: 1 / 4;
+        position: relative;
+        left: 17%;
+        top: 250px;
+        font-size: 2em;
+        font-family: 'Fredoka One';
+        background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        text-align: center;
+    }
+    
+    .thankyou p {
+        color: white;
+        font-family: 'Public Sans';
+    }
+}
+    
+/*=====================end of===============================
+=====================tablet CSS===========================*/
+
+
+/*==========================================================
+=======================mobile CSS=========================*/
 
 @media screen and (max-width:920px) {
 
@@ -513,7 +683,7 @@ html, body{
 }
 
 .card {
-    background-color: var(--pink);
+    background-color: var(--dark);
     z-index: 1;
     position: relative;
     margin: 0 auto 0 auto;
@@ -529,7 +699,7 @@ html, body{
 
 .wrapper {
     position: relative;
-    width: 100%;
+    width: 130%;
     display: flex;
     grid-column:  1 / 4;
     justify-content: flex-start;
@@ -537,7 +707,12 @@ html, body{
 }
 
 .slideIn {
-    color: var(--blue);
+    font-family: 'Fredoka One';
+    font-weight: normal;
+    background: var(--grad);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
     position: relative;
     z-index: 2;
     font-size: 3em;
@@ -547,9 +722,16 @@ html, body{
     opacity: 1;
     animation: slideIn 0.25s forwards;
     -webkit-animation: slideIn 0.25s forwards;
+    -moz-animation: slideIn 0.25s forwards;
+    -ms-animation: slideIn 0.25s forwards;
+    -o-animation: slideIn 0.25s forwards;
     animation-delay: 0.75s;
     -webkit-animation-delay: 0.75s;
+    -moz-animation-delay: 0.75s;
+    -ms-animation-delay: 0.75s;
+    -o-animation-delay: 0.75s;
 }
+
 
 .pgheader_hr {
     background-color: var(--blue);
@@ -576,6 +758,10 @@ html, body{
     border-radius: 300px;
     box-shadow: 0 0 0 0 white;
     animation: pulse 2s infinite;
+    -webkit-animation: pulse 2s infinite;
+    -moz-animation: pulse 2s infinite;
+    -ms-animation: pulse 2s infinite;
+    -o-animation: pulse 2s infinite;
 }
 
 .socialmedia {
@@ -629,14 +815,38 @@ html, body{
     text-align: left;
 }
 
+.port {
+    display: flex;
+    grid-column: 1 / 4;
+    position: relative;
+    margin: 0 auto;
+    top: 100px;
+    left: 40px;
+    font-size: 1.5em;
+    font-family: 'Fredoka One';
+    background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+}
+
+span {
+    content: '';
+    width: 100%;
+    }
+
 a {
     text-decoration: none;
     color: white;
 }
 
 a:hover {
-    color: #150941;
-    font-weight: bold;
+    background: var(--grad);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: bold;;
 }
 
 .contact_form {
@@ -655,13 +865,13 @@ a:hover {
     position: relative;
     margin: 0 auto;
     width: 100%;
-    top: 0px;
+    top: 10px;
     text-align: justify;
 }
 
 ::placeholder {
     color: white;
-    font-family: 'K2D';
+    font-family: 'Public Sans';
     font-size: 1rem;
 }
 
@@ -724,13 +934,34 @@ a:hover {
 
 .submit_btn:hover {
     background: var(--blue);
-    color:var(--pink);
+    color:var(--dark);
     cursor: pointer;
     transition: 0.5s ease-out;
 }
 
+.thankyou {
+    display: block;
+    grid-column: 1 / 4;
+    position: relative;
+    margin: auto;
+    left: 40px;
+    top: -100px;
+    font-size: 1.5em;
+    font-family: 'Fredoka One';
+    background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    text-align: center;
+}
+
+.thankyou p {
+    color: white;
+    font-family: 'Public Sans';
+}
+
 footer {
-    background-color: var(--blue);
+    background-color: var(--dark);
     height: 4vh;
     right: 0;
     bottom: 0;
@@ -749,143 +980,14 @@ footer p {
     text-shadow: #fff;
 }
 
-.welcome {
-    display: block;
-    grid-column: 2 / 3;
-    justify-content: normal;
-    align-items: flex-start;
-    margin: 0 auto 0 auto;
-    z-index: 1;
-    font-family: 'Faster One';
-    font-size: 3.5rem;
-    color: var(--pink);
-    text-align: center;
-    margin-top: 40vh;
 }
 
-.welcometag {
-    text-align: center;
-    position: relative;
-    font-family: 'K2D';
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    text-decoration: none;
-}
-    
-.welcometag:hover{
-    color: var(--pink);
-}
-    
-.blink {
-    color: var(--pink);
-    position: relative;
-    display: inline-block;
-    animation: blink-animation 1s linear infinite;
-    -webkit-animation: blink-animation 1s linear infinite;
-}
-
-.circles {
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-}
-
-}
-
-/*====================end of================================
-================mobile styling here=======================*/
+/*=====================end of===============================
+======================mobile CSS==========================*/
 
 
-
-/*==========================================================
-================tablet styling here=======================*/
-
-
-@media screen and (max-width: 1698px) and (min-device-width: 920px) and (orientation: portrait) {
-
-.card {
-    background-color: var(--pink);
-    z-index: 1;
-    position: relative;
-    margin: auto;
-    top: 300px;
-    height: 800px;
-    width: 80%;
-    box-shadow: 0px 20px 10px -12px rgb(0, 0, 0);
-    border-radius: 30px;
-    opacity: 0.9;
-    display: grid;
-    grid-template-columns: 25% 25% 25% 25%;
-}
-
-.selfie {
-    display: flex;
-    grid-column: 2 / 3;
-    position: relative;
-    margin-left: 120%;
-    top: 200px;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border: 2px solid white;
-    border-radius: 50%;
-    border-radius: 300px;
-    box-shadow: 0 0 0 0 white;
-    animation: pulse 2s infinite;
-}
-    
-.socialmedia {
-    display: flex;
-    grid-column: 2 / 3;
-    padding-left: 50px;
-    justify-content: center;
-    gap: 30px;
-    top: 300px;
-    color: var(--blue);
-    position: inherit;
-    font-size: 30pt;
-    text-align: center;  
-}
-    
-.content {
-    display: flex;
-    grid-column: 1 / 2;
-    margin: 0 auto;
-    bottom: 130px;
-    height: 200px;
-    padding-left: 150px;
-    width: 120%;
-    font-size: 1.2rem;
-    position: relative;
-    text-align: right;
-}
-    
-.contact_info {
-    display: block;
-    grid-column: 1 / 2;
-    margin: 0 auto;
-    bottom: 100px;
-    padding-left: 90px;
-    height: 200px;
-    width: 150%;
-    font-size: 1.2rem;
-    position: relative;
-    text-align: right;
-}  
-}
-
-/*====================end of================================
-================tablet styling here=======================*/
-
-
-
-
-/*===================desktop=================================
-=================circle animations==========================*/
+/*====================desktop================================
+============background CSS + animations====================*/
 
 .circles {
     width: 100%;
@@ -897,16 +999,16 @@ footer p {
 
 #small_circle { 
     display: flex;
-    grid-column: 1 / 2;
+    grid-column: 1 / 1;
     position: absolute;
-    justify-content: center;
+    margin: 0 auto;
     z-index: 0;
     top: 0px;
     left: 0px;
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background: linear-gradient(white, var(--blue));    
+    background: linear-gradient(var(--pink), var(--blue));    
     animation: small-circle 3s ease-in-out 0s infinite alternate;
     -moz-animation: small-circle 3s ease-in-out 0s infinite alternate;
     -ms-animation: small-circle 3s ease-in-out 0s infinite alternate;
@@ -935,11 +1037,11 @@ footer p {
 
 #big_circle { 
     display: flex;
-    grid-column: 3 / 4;
+    grid-column: 4 / 4;
     position: absolute;
     z-index: -1;
     right: 200px;
-    bottom: 350px;
+    bottom: 0px;
     height: 400px;
     width: 400px;
     opacity: 0.4;
@@ -962,7 +1064,7 @@ footer p {
     height: 1000px;
     width: 1000px;
     border-radius: 50%;
-    border: 3px dashed white;
+    border: 3px dashed var(--pink);
     animation: rotation 60s linear infinite;
     -moz-animation: rotation 60s linear infinite;
     -ms-animation: rotation 60s linear infinite;
@@ -970,7 +1072,7 @@ footer p {
     -webkit-animation: rotation 60s linear infinite;
 }
 
-#red_dotted_circle {
+#blue_dotted_circle {
     display: flex;
     grid-column: 1 / 1;
     position: absolute;
@@ -980,7 +1082,7 @@ footer p {
     height: 1000px;
     width: 1000px;
     border-radius: 50%;
-    border: 3px dashed var(--pink);
+    border: 3px dashed var(--blue);
     animation: rotation 60s linear infinite;
     -moz-animation: rotation 60s linear infinite;
     -ms-animation: rotation 60s linear infinite;
@@ -998,125 +1100,355 @@ footer p {
     width: 700px;
     height: 700px;
     border-radius: 50%;
-    background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--blue) 10px, var(--blue) 20px);
+    background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--opacity) 10px, var(--opacity) 20px);
 }
 
-
-/*===================mobile=================================
-=================circle animations==========================*/
-
-@media screen and (max-width:920px) {
-
-#small_circle { 
+#radius_circle {
     display: flex;
-    grid-column: 1 / 2;
-    position: absolute;
-    justify-content: center;
-    z-index: 0;
-    top: -100px;
-    left: 0px;
-    height: 7vw;
-    width: 7vw;
-    border-radius: 50%;
-    background: linear-gradient(white, var(--blue));    
-    animation: small-circle 3s ease-in-out 0s infinite alternate;
-    -moz-animation: small-circle 3s ease-in-out 0s infinite alternate;
-    -ms-animation: small-circle 3s ease-in-out 0s infinite alternate;
-    -o-animation: small-circle 3s ease-in-out 0s infinite alternate;
-    -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
-}
-
-#medium_circle { 
-    display: flex;
-    grid-column: 1 / 2;
+    grid-column: 2 / 3;
     position: absolute;
     z-index: 0;
-    top: 120px;
-    left: 20vw;
-    width: 20vw;
-    height: 20vw;
-    opacity: 0.7;
+    top: 30px;
+    left: 500px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
-    background: linear-gradient(var(--pink), var(--blue));
-    animation: rotation 8s linear infinite;
-    -moz-animation: rotation 8s linear infinite;
-    -ms-animation: rotation 8s linear infinite;
-    -o-animation: rotation 8s linear infinite;
-    -webkit-animation: rotation 8s linear infinite;
+    border: 2px solid var(--pink); 
 }
 
-#big_circle { 
-    display: flex;
-    grid-column: 3 / 4;
-    position: absolute;
-    z-index: -1;
-    left: 25vw;
-    bottom: 0px;
-    height: 35vw;
-    width: 35vw;
-    opacity: 0.4;
-    border-radius: 50%;
-    background: linear-gradient(var(--pink), var(--blue));
-    animation: big-circle 15s ease-in-out 0s infinite alternate;
-    -moz-animation: big-circle 15s ease-in-out 0s infinite alternate;
-    -ms-animation: big-circle 15s ease-in-out 0s infinite alternate;
-    -o-animation: big-circle 15s ease-in-out 0s infinite alternate;
-    -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
-}
-
-#dotted_circle {
+#line_anim {
     display: flex;
     grid-column: 4 / 4;
     position: absolute;
-    z-index: -1;
-    right: 50vw;
-    top: -30vh;
-    height: 100vw;
-    width: 100vw;
-    border-radius: 50%;
-    border: 3px dashed white;
-    animation: rotation 60s linear infinite;
-    -moz-animation: rotation 60s linear infinite;
-    -ms-animation: rotation 60s linear infinite;
-    -o-animation: rotation 60s linear infinite;
-    -webkit-animation: rotation 60s linear infinite;
+    z-index: 1;
+    top: 0px;
+    right: 20px;
+    width: 2px;
+    height: 1px;
+    background: var(--blue);
+    animation: line_anim 12s 0s ease-in-out alternate infinite;
+    -webkit-animation: line_anim 12s 0s ease-in-out alternate infinite;
+    -moz-animation: line_anim 12s 0s ease-in-out alternate infinite;
+    -ms-animation: line_anim 12s 0s ease-in-out alternate infinite;
+    -o-animation: line_anim 12s 0s ease-in-out alternate infinite;
 }
 
-#red_dotted_circle {
-    display: flex;
-    grid-column: 1 / 1;
-    position: absolute;
-    z-index: 0;
-    left: 60vw;
-    top: 30vh;
-    height: 90vw;
-    width: 90vw;
-    border-radius: 50%;
-    border: 3px dashed var(--pink);
-    animation: rotation 60s linear infinite;
-    -moz-animation: rotation 60s linear infinite;
-    -ms-animation: rotation 60s linear infinite;
-    -o-animation: rotation 60s linear infinite;
-    -webkit-animation: rotation 60s linear infinite;
+
+/*===================end of desktop==========================
+============background CSS + animations====================*/
+
+
+/*===================tablet=================================
+============background CSS + animations====================*/
+
+
+@media screen and (max-width: 1698px) and (min-device-width: 920px) and (orientation: portrait) {
+
+    .circles {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+    
+    #small_circle { 
+        display: flex;
+        grid-column: 1 / 1;
+        position: absolute;
+        margin: 0 auto;
+        z-index: 0;
+        top: 0px;
+        left: 0px;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background: linear-gradient(var(--pink), var(--blue));    
+        animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -moz-animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -ms-animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -o-animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
+    }
+    
+    #medium_circle { 
+        display: flex;
+        grid-column: 1 / 2;
+        position: absolute;
+        z-index: 0;
+        top: 120px;
+        left: 200px;
+        width: 200px;
+        height: 200px;
+        opacity: 0.7;
+        border-radius: 50%;
+        background: linear-gradient(var(--pink), var(--blue));
+        animation: rotation 8s linear infinite;
+        -moz-animation: rotation 8s linear infinite;
+        -ms-animation: rotation 8s linear infinite;
+        -o-animation: rotation 8s linear infinite;
+        -webkit-animation: rotation 8s linear infinite;
+    }
+    
+    #big_circle { 
+        display: flex;
+        grid-column: 4 / 4;
+        position: absolute;
+        z-index: -1;
+        right: 20px;
+        bottom: 0px;
+        height: 400px;
+        width: 400px;
+        opacity: 0.4;
+        border-radius: 50%;
+        background: linear-gradient(var(--pink), var(--blue));
+        animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -moz-animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -ms-animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -o-animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
+    }
+    
+    #dotted_circle {
+        display: flex;
+        grid-column: 4 / 4;
+        position: absolute;
+        z-index: -1;
+        right: -350px;
+        top: 300px;
+        height: 1000px;
+        width: 1000px;
+        border-radius: 50%;
+        border: 3px dashed var(--pink);
+        animation: rotation 60s linear infinite;
+        -moz-animation: rotation 60s linear infinite;
+        -ms-animation: rotation 60s linear infinite;
+        -o-animation: rotation 60s linear infinite;
+        -webkit-animation: rotation 60s linear infinite;
+    }
+    
+    #blue_dotted_circle {
+        display: flex;
+        grid-column: 1 / 1;
+        position: absolute;
+        z-index: 0;
+        left: -300px;
+        top: -500px;
+        height: 1000px;
+        width: 1000px;
+        border-radius: 50%;
+        border: 3px dashed var(--blue);
+        animation: rotation 60s linear infinite;
+        -moz-animation: rotation 60s linear infinite;
+        -ms-animation: rotation 60s linear infinite;
+        -o-animation: rotation 60s linear infinite;
+        -webkit-animation: rotation 60s linear infinite;
+    }
+    
+    #giant_circle {
+        display: flex;
+        grid-column: 1 / 2;
+        position: absolute;
+        z-index: -1;
+        top: 1150px;
+        left: -100px;
+        width: 700px;
+        height: 700px;
+        border-radius: 50%;
+        background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--opacity) 10px, var(--opacity) 20px);
+    }
+    
+    #radius_circle {
+        display: flex;
+        grid-column: 2 / 3;
+        position: absolute;
+        z-index: 0;
+        top: 50px;
+        left: 400px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid var(--pink); 
+    }
+    
+    #line_anim {
+        display: flex;
+        grid-column: 4 / 4;
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        right: 20px;
+        width: 2px;
+        height: 1px;
+        background: var(--blue);
+        animation: line_anim 12s 0s ease-in-out alternate infinite;
+        -webkit-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        -moz-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        -ms-animation: line_anim 12s 0s ease-in-out alternate infinite;
+    -o-animation: line_anim 12s 0s ease-in-out alternate infinite;
+    }
 }
 
-#giant_circle {
-    display: flex;
-    grid-column: 1 / 2;
-    position: absolute;
-    z-index: -1;
-    top: 80vh;
-    right: 5vw;
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--blue) 10px, var(--blue) 20px);
+/*=================end of tablet=============================
+============background CSS + animations====================*/
+    
+
+/*=====================mobile===============================
+============background CSS + animations====================*/
+
+@media screen and (max-width:920px) {
+
+    .circles {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+
+    #small_circle { 
+        display: flex;
+        grid-column: 1 / 2;
+        position: absolute;
+        justify-content: center;
+        z-index: 0;
+        top: -100px;
+        left: 0px;
+        height: 7vw;
+        width: 7vw;
+        border-radius: 50%;
+        background: linear-gradient(var(--pink), var(--blue));   
+        animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -moz-animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -ms-animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -o-animation: small-circle 3s ease-in-out 0s infinite alternate;
+        -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
+    }
+
+    #medium_circle { 
+        display: flex;
+        grid-column: 1 / 2;
+        position: absolute;
+        z-index: 0;
+        top: 120px;
+        left: 20vw;
+        width: 20vw;
+        height: 20vw;
+        opacity: 0.7;
+        border-radius: 50%;
+        background: linear-gradient(var(--pink), var(--blue));        
+        animation: rotation 8s linear infinite;
+        -moz-animation: rotation 8s linear infinite;
+        -ms-animation: rotation 8s linear infinite;
+        -o-animation: rotation 8s linear infinite;
+        -webkit-animation: rotation 8s linear infinite;
+    }
+    
+    #big_circle { 
+        display: flex;
+        grid-column: 3 / 4;
+        position: absolute;
+        z-index: -1;
+        left: 25vw;
+        bottom: 0px;
+        height: 35vw;
+        width: 35vw;
+        opacity: 0.4;
+        border-radius: 50%;
+        background: linear-gradient(var(--pink), var(--blue));
+        animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -moz-animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -ms-animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -o-animation: big-circle 15s ease-in-out 0s infinite alternate;
+        -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
+    }
+    
+    #dotted_circle {
+        display: flex;
+        grid-column: 4 / 4;
+        position: absolute;
+        z-index: -1;
+        right: 50vw;
+        top: -30vh;
+        height: 100vw;
+        width: 100vw;
+        border-radius: 50%;
+        border: 3px dashed var(--blue);
+        animation: rotation 60s linear infinite;
+        -moz-animation: rotation 60s linear infinite;
+        -ms-animation: rotation 60s linear infinite;
+        -o-animation: rotation 60s linear infinite;
+        -webkit-animation: rotation 60s linear infinite;
+    }
+    
+    #blue_dotted_circle {
+        display: flex;
+        grid-column: 1 / 1;
+        position: absolute;
+        z-index: 0;
+        left: 60vw;
+        top: 30vh;
+        height: 90vw;
+        width: 90vw;
+        border-radius: 50%;
+        border: 3px dashed var(--pink);        
+        animation: rotation 60s linear infinite;
+        -moz-animation: rotation 60s linear infinite;
+        -ms-animation: rotation 60s linear infinite;
+        -o-animation: rotation 60s linear infinite;
+        -webkit-animation: rotation 60s linear infinite;
+    }
+
+    #giant_circle {
+        display: flex;
+        grid-column: 1 / 2;
+        position: absolute;
+        z-index: -1;
+        top: 80vh;
+        right: 5vw;
+        width: 500px;
+        height: 500px;
+        border-radius: 50%;
+        background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--opacity) 10px, var(--opacity) 20px);
+    }
+
+    #radius_circle {
+        display: flex;
+        grid-column: 1 / 1;
+        position: absolute;
+        z-index: 0;
+        top: 30px;
+        left: 300px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 2px solid var(--pink); 
+    }
+    
+    #line_anim {
+        display: flex;
+        grid-column: 4 / 4;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 30px;
+        width: 2px;
+        height: 1px;
+        background: var(--blue);
+        animation: line_anim 10s 0s ease-in-out alternate infinite;
+        -webkit-animation: line_anim 10s 0s ease-in-out alternate infinite;
+        -moz-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        -ms-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        -o-animation: line_anim 12s 0s ease-in-out alternate infinite;
+    }
 }
-}
+
+/*==================end of mobile=============================
+============background CSS + animations=====================*/
 
 
 /*============================================================
-==================other animations==========================*/
+====================keyframes animations====================*/
 
 @keyframes slideIn {
         100% {
@@ -1183,3 +1515,34 @@ footer p {
         }
     }
 
+@keyframes line_anim {
+        0% {
+            transform: scaleY(0.0);
+        }
+        50% {
+            transform: scaleY(1500.0);
+        }
+        100% {
+            transform: scaleY(0.0);
+        }
+    }
+
+
+/*mobile animation for line_anim*/
+@media screen and (max-width:921px) {
+
+    @keyframes line_anim {
+        0% {
+            transform: scaleY(0.0);
+        }
+        50% {
+            transform: scaleY(500.0);
+        }
+        100% {
+            transform: scaleY(0.0);
+        }
+    }
+}
+
+/*========================end of==============================
+====================keyframes animations====================*/
