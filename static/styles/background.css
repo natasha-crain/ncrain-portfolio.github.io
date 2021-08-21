@@ -20,12 +20,37 @@
 /*==========================================================
 =====================desktop CSS==========================*/
 
+/*==================custom scrollbar=========================
+==============for chrome, safari, edge and oper============*/
+
+::-webkit-scrollbar { /*===width of the scrollbar===*/
+    width: 7px;
+}
+  
+::-webkit-scrollbar-track {  /*===color of track===*/
+    background: var(--dark);
+}
+
+::-webkit-scrollbar-thumb { /*===color of handle===*/
+    background: var(--pink);
+}
+  
+::-webkit-scrollbar-thumb:hover { /*===color of handle on hover===*/
+    background: #500037;
+}
+
+/*======================end of==============================
+===================custom scrollbar=======================*/
 
 html, body{
     min-height: 100vh;
     overflow: hidden;
     margin: 0%;
     position: relative;
+
+    /*customization for scrollbar for Firefox*/
+    scrollbar-width: thin;          
+    scrollbar-color: var(--pink) var(--dark);
 }
 
 body {
@@ -85,7 +110,7 @@ body {
     margin: 0;
 }
 
-#small_circle { 
+#small-circle { 
     display: flex;
     grid-column: 1 / 2;
     position: absolute;
@@ -104,7 +129,7 @@ body {
     -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
 }
 
-#medium_circle { 
+#medium-circle { 
     display: flex;
     grid-column: 1 / 2;
     position: absolute;
@@ -123,7 +148,7 @@ body {
     -webkit-animation: rotation 8s linear infinite;
 }
 
-#big_circle { 
+#big-circle { 
     display: flex;
     grid-column: 3 / 4;
     position: absolute;
@@ -142,7 +167,7 @@ body {
     -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
 }
 
-#dotted_circle {
+#dotted-circle {
     display: flex;
     grid-column: 4 / 4;
     position: absolute;
@@ -160,7 +185,7 @@ body {
     -webkit-animation: rotation 60s linear infinite;
 }
 
-#blue_dotted_circle {
+#bluedotted-circle {
     display: flex;
     grid-column: 1 / 1;
     position: absolute;
@@ -178,7 +203,7 @@ body {
     -webkit-animation: rotation 60s linear infinite;
 }
 
-#giant_circle {
+#giant-circle {
     display: flex;
     grid-column: 1 / 2;
     position: absolute;
@@ -191,7 +216,7 @@ body {
     background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--opacity) 10px, var(--opacity) 20px);
 }
 
-#radius_circle {
+#radius-circle {
     display: flex;
     grid-column: 1 / 2;
     position: absolute;
@@ -204,7 +229,7 @@ body {
     border: 2px solid var(--pink); 
 }
 
-#line_anim {
+#line-anim {
     display: flex;
     grid-column: 4 / 4;
     position: absolute;
@@ -214,11 +239,11 @@ body {
     width: 2px;
     height: 1px;
     background: var(--blue);
-    animation: line_anim 12s 0s ease-in-out alternate infinite;
-    -webkit-animation: line_anim 12s 0s ease-in-out alternate infinite;
-    -moz-animation: line_anim 12s 0s ease-in-out alternate infinite;
-    -ms-animation: line_anim 12s 0s ease-in-out alternate infinite;
-    -o-animation: line_anim 12s 0s ease-in-out alternate infinite;
+    animation: line-anim 12s 0s ease-in-out alternate infinite;
+    -webkit-animation: line-anim 12s 0s ease-in-out alternate infinite;
+    -moz-animation: line-anim 12s 0s ease-in-out alternate infinite;
+    -ms-animation: line-anim 12s 0s ease-in-out alternate infinite;
+    -o-animation: line-anim 12s 0s ease-in-out alternate infinite;
 }
 
 /*======================end of==============================
@@ -256,7 +281,7 @@ body {
         grid-template-columns: 25% 25% 25% 25%;
     }
     
-    #small_circle { 
+    #small-circle { 
         display: flex;
         grid-column: 1 / 1;
         position: absolute;
@@ -275,7 +300,7 @@ body {
         -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
     }
     
-    #medium_circle { 
+    #medium-circle { 
         display: flex;
         grid-column: 1 / 2;
         position: absolute;
@@ -294,7 +319,7 @@ body {
         -webkit-animation: rotation 8s linear infinite;
     }
     
-    #big_circle { 
+    #big-circle { 
         display: flex;
         grid-column: 3 / 4;
         position: absolute;
@@ -313,7 +338,7 @@ body {
         -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
     }
     
-    #dotted_circle {
+    #dotted-circle {
         display: flex;
         grid-column: 4 / 4;
         position: absolute;
@@ -331,7 +356,7 @@ body {
         -webkit-animation: rotation 60s linear infinite;
     }
     
-    #blue_dotted_circle {
+    #bluedotted-circle {
         display: flex;
         grid-column: 1 / 1;
         position: absolute;
@@ -349,7 +374,7 @@ body {
         -webkit-animation: rotation 60s linear infinite;
     }
     
-    #giant_circle {
+    #giant-circle {
         display: flex;
         grid-column: 1 / 2;
         position: absolute;
@@ -362,7 +387,7 @@ body {
         background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--opacity) 10px, var(--opacity) 20px);
     }
     
-    #radius_circle {
+    #radius-circle {
         display: flex;
         grid-column: 2 / 3;
         position: absolute;
@@ -375,7 +400,7 @@ body {
         border: 2px solid var(--pink); 
     }
     
-    #line_anim {
+    #line-anim {
         display: flex;
         grid-column: 4 / 4;
         position: absolute;
@@ -385,11 +410,11 @@ body {
         width: 2px;
         height: 1px;
         background: var(--blue);
-        animation: line_anim 12s 0s ease-in-out alternate infinite;
-        -webkit-animation: line_anim 12s 0s ease-in-out alternate infinite;
-        -moz-animation: line_anim 12s 0s ease-in-out alternate infinite;
-        -ms-animation: line_anim 12s 0s ease-in-out alternate infinite;
-        -o-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        animation: line-anim 12s 0s ease-in-out alternate infinite;
+        -webkit-animation: line-anim 12s 0s ease-in-out alternate infinite;
+        -moz-animation: line-anim 12s 0s ease-in-out alternate infinite;
+        -ms-animation: line-anim 12s 0s ease-in-out alternate infinite;
+        -o-animation: line-anim 12s 0s ease-in-out alternate infinite;
     }
 }
 
@@ -406,7 +431,11 @@ body {
         height: 100%;
         width: 100%;
         display: grid;
-        grid-template-columns: 33% 33% 33%;    
+        grid-template-columns: 33% 33% 33%;
+        
+        /*customization for scrollbar for Firefox*/
+        scrollbar-width: thin;          
+        scrollbar-color: var(--pink) var(--dark);
     }
 
     .welcome {
@@ -415,7 +444,7 @@ body {
         justify-content: center;
         margin: 0 auto 0 auto;
         z-index: 1;
-        font-family: 'Londrina Outline';
+        font-family: 'Fredoka One';
         font-size: 4rem;
         background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
         color: transparent;
@@ -428,7 +457,7 @@ body {
     .welcometag {
         text-align: center;
         position: relative;
-        font-family: 'Source Sans Pro';
+        font-family: 'Public Sans';
         color: var(--blue);
         font-weight: normal;
         text-transform: none;
@@ -457,7 +486,7 @@ body {
         margin: 0;
     }
 
-    #small_circle { 
+    #small-circle { 
         display: flex;
         grid-column: 1 / 2;
         position: absolute;
@@ -476,7 +505,7 @@ body {
         -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
     }
 
-    #medium_circle { 
+    #medium-circle { 
         display: flex;
         grid-column: 1 / 2;
         position: absolute;
@@ -495,7 +524,7 @@ body {
         -webkit-animation: rotation 8s linear infinite;
     }
     
-    #big_circle { 
+    #big-circle { 
         display: flex;
         grid-column: 3 / 4;
         position: absolute;
@@ -514,7 +543,7 @@ body {
         -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
     }
     
-    #dotted_circle {
+    #dotted-circle {
         display: flex;
         grid-column: 4 / 4;
         position: absolute;
@@ -532,7 +561,7 @@ body {
         -webkit-animation: rotation 60s linear infinite;
     }
     
-    #blue_dotted_circle {
+    #blue-dotted-circle {
         display: flex;
         grid-column: 1 / 1;
         position: absolute;
@@ -550,7 +579,7 @@ body {
         -webkit-animation: rotation 60s linear infinite;
     }
 
-    #giant_circle {
+    #giant-circle {
         display: flex;
         grid-column: 1 / 2;
         position: absolute;
@@ -563,7 +592,7 @@ body {
         background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--opacity) 10px, var(--opacity) 20px);
     }
 
-    #radius_circle {
+    #radius-circle {
         display: flex;
         grid-column: 1 / 1;
         position: absolute;
@@ -577,7 +606,7 @@ body {
         border: 2px solid var(--blue);
     }
     
-    #radius_circle_2 {
+    #radius-circle_2 {
         display: flex;
         grid-column: 1 / 1;
         position: absolute;
@@ -590,7 +619,7 @@ body {
         border: 2px solid var(--pink); 
     }
     
-    #line_anim {
+    #line-anim {
         display: flex;
         grid-column: 4 / 4;
         position: absolute;
@@ -600,11 +629,11 @@ body {
         width: 2px;
         height: 1px;
         background: var(--blue);
-        animation: line_anim 10s 0s ease-in-out alternate infinite;
-        -webkit-animation: line_anim 10s 0s ease-in-out alternate infinite;
-        -moz-animation: line_anim 12s 0s ease-in-out alternate infinite;
-        -ms-animation: line_anim 12s 0s ease-in-out alternate infinite;
-        -o-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        animation: line-anim 10s 0s ease-in-out alternate infinite;
+        -webkit-animation: line-anim 10s 0s ease-in-out alternate infinite;
+        -moz-animation: line-anim 12s 0s ease-in-out alternate infinite;
+        -ms-animation: line-anim 12s 0s ease-in-out alternate infinite;
+        -o-animation: line-anim 12s 0s ease-in-out alternate infinite;
     }
 }
 
@@ -651,19 +680,7 @@ body {
         }
       }
 
-@keyframes rollIn {
-        0% {
-            transform: translate(0px, 0px) rotate(0deg);
-        }
-        50% {
-            transform: translate(250px, 0px) rotate(180deg);
-        }
-        100% {
-            transform: translate(0px, 0px) rotate(360deg);
-        }
-    }
-
-@keyframes line_anim {
+@keyframes line-anim {
         0% {
             transform: scaleY(0.0);
         }
@@ -675,10 +692,10 @@ body {
         }
     }
 
-/*mobile animation for line_anim*/
+/*mobile animation for line-anim*/
 @media screen and (max-width:921px) {
 
-    @keyframes line_anim {
+    @keyframes line-anim {
         0% {
             transform: scaleY(0.0);
         }

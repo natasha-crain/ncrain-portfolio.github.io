@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NC Portfolio - Portfolio</title>
-    <link rel="icon" href="images/logo_shape.png" type="image/icon type">
-    <link href="styles/styles.css" rel="stylesheet" type="text/css" />
-    <link href="styles/transitions.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://use.fontawesome.com/134e387789.js"></script>
-    <script src="scripts/transitions.js"></script>
+    <link rel="icon" href="static/images/logo_shape.png" type="image/icon" />
+    <link href="static/styles/styles.css" rel="stylesheet" type="text/css" />
+    <link href="static/styles/transitions.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div class="transition transition-3 is-active"></div><!--for page transition animations-->
+<!--for page transition animations-->
+<div class="transition transition-3 is-active"></div>
+<!--header and nav-->
 <header>
-    <img class="logo" src="images/logo.png" alt="NC Portfolio Logo" onclick="window.open('index.html', '_blank');">
+    <img class="logo" src="static/images/logo.png" alt="NC Portfolio Logo" onclick="window.location.href = 'index.html';" />
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <nav>
         <ul>
@@ -28,24 +27,27 @@
         <span></span>
     </label>
 </header>
+<!--main page content-->
 <div>
     <div id="skills" class="card">
         <div class="port"><h1>Portfolio Coming Soon.</h1></div>
     </div>
 </div>
-<div><!--div container for background animations-->
-    <div id="small_circle"></div>
-    <div id="medium_circle"></div>
-    <div id="big_circle"></div>
-    <div id="dotted_circle"></div>
-    <div id="giant_circle"></div>
-    <div id="blue_dotted_circle"></div>
-    <div id="radius_circle"></div>
-    <div id="line_anim"></div>
+<!--background animations-->
+<div>
+    <div id="small-circle"></div>
+    <div id="medium-circle"></div>
+    <div id="big-circle"></div>
+    <div id="dotted-circle"></div>
+    <div id="giant-circle"></div>
+    <div id="bluedotted-circle"></div>
+    <div id="radius-circle"></div>
+    <div id="line-anim"></div>
 </div>
 <footer>
-    <div class="footer"><p>&copyMMXXI Natasha Crain</div>
+    <div class="footer"><p>&copy;MMXXI Natasha Crain</div>
 </footer>
-<script src="scripts/transitions.js"></script>
+<!--script for page transitions-->
+<script src="static/scripts/transitions.js"></script>>
 </body>
 </html>

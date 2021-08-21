@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NC Portfolio - About Me</title>
-    <link rel="icon" href="images/logo_shape.png" type="image/icon type">
-    <link href="styles/styles.css" rel="stylesheet" type="text/css" />
-    <link href="styles/transitions.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" href="static/images/logo_shape.png" type="image/icon" />
+    <link href="static/styles/styles.css" rel="stylesheet" type="text/css" />
+    <link href="static/styles/transitions.css" rel="stylesheet" type="text/css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://use.fontawesome.com/134e387789.js"></script>
-    <script src="scripts/transitions.js"></script>
 </head>
 <body>
-<div class="transition transition-2 is-active"></div><!--for page transition animations-->
+<!--for page transition animations-->
+<div class="transition transition-2 is-active"></div>
+<!--header and nav-->
 <header>
-    <img class="logo" src="images/logo.png" alt="NC Portfolio Logo" onclick="window.open('index.html', '_blank');">
+    <img class="logo" src="static/images/logo.png" alt="NC Portfolio Logo" onclick="window.location.href = ('index.html');" />
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <nav>
         <ul>
@@ -28,42 +28,47 @@
         <span></span>
     </label>
 </header>
+<!--main page content-->
 <div>
     <div id="aboutme" class="card">
         <div class="wrapper">
-            <div class="slideIn">
+            <div class="slide-in">
                 <div class="pageheader">About Me.</div>
-                <hr class="pgheader_hr">
+                <hr class="pgheader-hr">
             </div>
         </div>
-        <img class="selfie" src="https://i.ibb.co/jJqcCSk/selfie.jpg" alt="selfie"></img>
+        <img class="selfie" src="https://i.ibb.co/jJqcCSk/selfie.jpg" alt="selfie" />
         <div class="socialmedia">
-            <div><a href="https://www.instagram.com/natasha.crain/?hl=en"><i class="fa fa-instagram fa-fw" aria-hidden="true"></i></a></div>
-            <div><a href="https://www.facebook.com/NatashaCrain93/?hl=en"><i class="fa fa-facebook-official fa-fw" aria-hidden="true"></i></a></div>
-            <div><a href="https://github.com/ncrain-boop/ncrain-boop"><i class="fa fa-github fa-fw" aria-hidden="true"></i></a></div>
+            <div><i class="fa fa-instagram fa-fw" aria-hidden="true" title="Insta Logo" onclick="window.open('http://www.instagram.com/natasha.crain/?hl=en', '_blank');"></i></div>
+            <div><i class="fa fa-facebook-official fa-fw" aria-hidden="true" title="FB Logo" onclick="window.open('https://www.facebook.com/NatashaCrain93/?hl=en', '_blank');"></i></div>
+            <div><i class="fa fa-github fa-fw" aria-hidden="true" title="GitHub Logo" onclick="window.open('https://github.com/ncrain-boop/ncrain-boop', '_blank');"></i></div>
         </div>
         <div class="content">Hello! I'm Natasha Crain, a Visualisation Specialist based in Glasgow, currently studying Front End Development with The Learning People, and looking forward in starting a new career in 
             web design and creating awesome and stunning websites!
         </div>
-        <div class="contact_info">
+        <div class="contact-info">
             <div><h3>CONTACT INFO:</h3></div>
             <div><p><strong>EMAIL :</strong><a href="mailto:n.crain@outlook.com">  n.crain@outlook.com</a></p></div>
             <div><p><strong>PHONE :</strong>  (+44) 0787680929</p></div>
         </div>
     </div>
 </div>
-<div class="circles"><!--div container for background animations-->
-    <div id="small_circle"></div>
-    <div id="medium_circle"></div>
-    <div id="big_circle"></div>
-    <div id="dotted_circle"></div>
-    <div id="giant_circle"></div>
-    <div id="blue_dotted_circle"></div>
-    <div id="radius_circle"></div>
-    <div id="line_anim"></div>
+<!--background animations-->
+<div class="circles">
+    <div id="small-circle"></div>
+    <div id="medium-circle"></div>
+    <div id="big-circle"></div>
+    <div id="dotted-circle"></div>
+    <div id="giant-circle"></div>
+    <div id="bluedotted-circle"></div>
+    <div id="radius-circle"></div>
+    <div id="line-anim"></div>
 </div>
 <footer>
-    <div class="footer"><p>&copyMMXXI Natasha Crain</div>
+    <div class="footer"><p>&copy;MMXXI Natasha Crain</div>
 </footer>
+<!--scripts for icons and page transitions-->
+<script src="https://use.fontawesome.com/134e387789.js"></script>
+<script src="static/scripts/transitions.js"></script>
 </body>
 </html>

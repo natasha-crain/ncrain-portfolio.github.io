@@ -21,17 +21,17 @@
 }
 
 
-/*==========================================================
-====================custom scrollbar======================*/
+/*==================custom scrollbar=========================
+==============for chrome, safari, edge and oper============*/
 
 ::-webkit-scrollbar { /*===width of the scrollbar===*/
-    width: 2px;
+    width: 7px;
 }
   
 ::-webkit-scrollbar-track {  /*===color of track===*/
     background: var(--dark);
 }
-  
+
 ::-webkit-scrollbar-thumb { /*===color of handle===*/
     background: var(--pink);
 }
@@ -47,8 +47,13 @@
 html, body{
     min-height: 100vh;
     margin:0%;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
+
+    /*customization for scrollbar for Firefox*/
+    scrollbar-width: thin;          
+    scrollbar-color: var(--pink) var(--dark);
 }
 
 
@@ -72,7 +77,7 @@ header {
     position: absolute;
     top: 0;
     right: 0;
-    margin-right: 3.5rem;
+    margin-right: 3rem;
     height: 100%;
     display: flex;
     align-items: center;
@@ -93,7 +98,7 @@ header {
 .nav-toggle-label span:hover,
 .nav-toggle-label span:hover::before,
 .nav-toggle-label span:hover::after {
-    background-color: var(--pink);
+    background: var(--grad);
 }
 
 .nav-toggle-label span::before, 
@@ -119,7 +124,7 @@ header {
 }
 
 nav {
-    position:absolute;
+    position: absolute;
     text-align: right;
     top: 100%;
     right: 0;
@@ -134,12 +139,12 @@ nav {
 nav ul {
     margin-left: 0;
     list-style: none;
-    margin-top: 5em;
+    margin-top: 25vh;
 }
 
 nav li {
-    margin-bottom: 1em;
-    margin-right: 5em;
+    margin-bottom: 0;
+    margin-right: 6vw;
     padding: 2em;
 }
 
@@ -288,7 +293,7 @@ nav a:hover::before {
     top: 0px;
 }
 
-.slideIn {
+.slide-in {
     font-family: 'Fredoka One';
     font-weight: normal;
     background: var(--grad);
@@ -301,19 +306,19 @@ nav a:hover::before {
     text-align: right;
     left: -2000px;
     opacity: 1;
-    animation: slideIn 0.25s forwards;
-    -webkit-animation: slideIn 0.25s forwards;
-    -moz-animation: slideIn 0.25s forwards;
-    -ms-animation: slideIn 0.25s forwards;
-    -o-animation: slideIn 0.25s forwards;
-    animation-delay: 0.75s;
-    -webkit-animation-delay: 0.75s;
-    -moz-animation-delay: 0.75s;
-    -ms-animation-delay: 0.75s;
-    -o-animation-delay: 0.75s;
+    animation: slide-in 0.25s forwards;
+    -webkit-animation: slide-in 0.25s forwards;
+    -moz-animation: slide-in 0.25s forwards;
+    -ms-animation: slide-in 0.25s forwards;
+    -o-animation: slide-in 0.25s forwards;
+    animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+    -ms-animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
 }
 
-.pgheader_hr {
+.pgheader-hr {
     background: var(--grad);
     border: 0px;
     height: 8px;
@@ -324,10 +329,11 @@ nav a:hover::before {
 
 .selfie {
     display: flex;
-    grid-column: 2 / 3;
+    grid-column: 3 / 3;
     position: relative;
-    margin-left: 120%;
-    top: 225px;
+    justify-content: center;
+    left: 60px;
+    top: 230px;
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -344,37 +350,50 @@ nav a:hover::before {
 
 .socialmedia {
     display: flex;
-    grid-column: 2 / 3;
-    margin-left: 147%;
+    grid-column: 3 / 3;
     justify-content: center;
+    left: 60px;
     gap: 30px;
-    top: 270px;
-    position: inherit;
+    top: 500px;
+    position: absolute;
     font-size: 30pt;
     text-align: center;  
+    cursor: pointer;
+}
+
+.fa-instagram:hover, 
+.fa-facebook-official:hover,
+.fa-github:hover  {
+    background: var(--grad);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: bold;
 }
 
 .content {
     display: flex;
-    grid-column: 2 / 2;
-    margin: 0 auto;
-    bottom: 50px;
+    grid-column: 3 / 3;
+    margin: auto;
+    right: 20vw;
+    top: 230px;
     height: 200px;
     width: 100%;
     font-size: 1.2rem;
-    position: relative;
+    position: absolute;
     text-align: right;
 }
 
-.contact_info {
+.contact-info {
     display: block;
-    grid-column: 2 / 2;
-    margin: 0 auto;
+    grid-column: 3 / 3;
+    margin: auto;
+    right: 20vw;
     bottom: 75px;
     height: 200px;
-    width: 100%;
+    width: 400px;
     font-size: 1.3rem;
-    position: relative;
+    position: absolute;
     text-align: right;
 }
 
@@ -382,8 +401,9 @@ nav a:hover::before {
     display: flex;
     grid-column: 1 / 4;
     position: relative;
-    margin: auto;
-    left: 200px;
+    margin: 0 auto;
+    align-items: center;
+    left: 18%;
     font-size: 2em;
     font-family: 'Fredoka One';
     background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
@@ -411,21 +431,28 @@ a:hover {
     font-weight: bold;
 }
 
-.contact_form {
+.contact-form {
     display: block;
     grid-column: 2 / 4;
     position: relative;
-    margin: auto;
+    align-items: center;
+    margin: 0 auto;
+    left: 5%;
+    right: 0;
+    top: 5%;
     width: 100%;
 }
 
-.form_tag {
+.form-tag {
     display: block;
     grid-column: 2 / 4;
     position: relative;
-    margin: auto;
-    width: 500px;
-    top: 80px;
+    align-items: center;
+    margin: 0 auto;
+    width: 100%;
+    top: 90%;
+    left: 5%;
+    right: 0;
     text-align: center;
 }
 
@@ -435,7 +462,7 @@ a:hover {
     font-size: 1rem;
 }
 
-.contact_text {
+.contact-text {
     width: 100%;
     padding: 15px;
     outline: none;
@@ -446,7 +473,7 @@ a:hover {
     transition: 0.5s ease-in-out;
 }
 
-.contact_text:focus {
+.contact-text:focus {
     background-color: var(--blue);
     border-radius: 10px;
     transition: 0.5s ease-in-out;
@@ -473,7 +500,7 @@ a:hover {
     transition: 0.5s ease-in-out; 
 }
 
-.submit_btn {
+.submit-btn {
     display: block;
     width: 100px;
     margin-top: 10px;
@@ -489,7 +516,7 @@ a:hover {
     transition: 0.5s ease-out;
 }
 
-.submit_btn:hover {
+.submit-btn:hover {
     cursor: pointer;
     border: 5px solid var(--dark);
     border-radius: 10px;
@@ -533,6 +560,7 @@ footer p {
     text-align: center;
     line-height: 50%;
     color: var(--pink);
+    text-shadow: 0 0 1px var(--dark), 0 0 1px var(--dark);
     font-weight: bold;
     font-size: 15pt;
     text-shadow: #fff;
@@ -565,10 +593,11 @@ footer p {
     
     .selfie {
         display: flex;
-        grid-column: 2 / 3;
+        grid-column: 3 / 3;
         position: relative;
-        margin-left: 120%;
-        top: 200px;
+        justify-content: center;
+        left: 60px;
+        top: 230px;
         width: 200px;
         height: 200px;
         object-fit: cover;
@@ -577,43 +606,57 @@ footer p {
         border-radius: 300px;
         box-shadow: 0 0 0 0 white;
         animation: pulse 2s infinite;
+        -webkit-animation: pulse 2s infinite;
+        -moz-animation: pulse 2s infinite;
+        -ms-animation: pulse 2s infinite;
+        -o-animation: pulse 2s infinite;
     }
-        
+    
     .socialmedia {
         display: flex;
-        grid-column: 2 / 3;
-        padding-left: 50px;
+        grid-column: 3 / 3;
         justify-content: center;
+        left: 60px;
         gap: 30px;
-        top: 300px;
-        position: inherit;
+        top: 550px;
+        position: absolute;
         font-size: 30pt;
         text-align: center;  
     }
-        
+
+    .fa-instagram:hover, 
+    .fa-facebook-official:hover,
+    .fa-github:hover  {
+        background: var(--grad);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
+        font-weight: bold;
+}
+
     .content {
         display: flex;
-        grid-column: 1 / 2;
-        margin: 0 auto;
-        bottom: 130px;
+        grid-column: 3 / 3;
+        margin: auto;
+        right: 20vw;
+        top: 220px;
         height: 200px;
-        padding-left: 150px;
-        width: 120%;
+        width: 100%;
         font-size: 1.2rem;
-        position: relative;
+        position: absolute;
         text-align: right;
     }
-        
-    .contact_info {
+    
+    .contact-info {
         display: block;
-        grid-column: 1 / 2;
-        margin: 0 auto;
-        bottom: 100px;
-        padding-left: 90px;
+        grid-column: 3 / 3;
+        margin: auto;
+        right: 20vw;
+        bottom: 75px;
         height: 200px;
-        width: 150%;
-        font-size: 1.2rem;
-        position: relative;
+        width: 400px;
+        font-size: 1.3rem;
+        position: absolute;
         text-align: right;
     } 
     
@@ -621,8 +664,9 @@ footer p {
         display: flex;
         grid-column: 1 / 4;
         position: relative;
-        margin: auto;
-        left: 110px;
+        margin: 0 auto;
+        align-items: center;
+        left: 15%;
         font-size: 2em;
         font-family: 'Fredoka One';
         background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
@@ -631,7 +675,7 @@ footer p {
         -webkit-background-clip: text;
         text-align: center;
     }
-    
+
     a {
         text-decoration: none;
         color: white;
@@ -643,6 +687,47 @@ footer p {
         background-clip: text;
         -webkit-background-clip: text;
         font-weight: bold;;
+    }
+
+    .contact-form {
+        display: block;
+        grid-column: 2 / 4;
+        position: relative;
+        align-items: center;
+        margin: 0 auto;
+        left: 0;
+        right: 3%;
+        top: 5%; 
+        width: 100%;
+    }
+    
+    .form-tag {
+        display: block;
+        grid-column: 2 / 4;
+        position: relative;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+        top: 80%;
+        left: 3%;
+        right: 0;
+        text-align: center;
+    }
+
+    .message {
+        display: block;
+        width: 97%;
+        margin-top: 10px;
+        padding: 20px;
+        resize: none;
+        outline: none;
+        height: 150px;
+        background: none;
+        border: 5px solid var(--blue);
+        border-radius: 10px;
+        color: white;
+        font-family: 'Public Sans' !important;
+        transition: 0.5s ease-in-out;
     }
     
     .thankyou {
@@ -678,8 +763,13 @@ footer p {
 html, body{
     min-height: 100vh;
     margin:0%;
-    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
     position: relative;
+
+    /*customization for scrollbar for Firefox*/
+    scrollbar-width: thin;          
+    scrollbar-color: var(--pink) var(--dark);
 }
 
 .card {
@@ -706,7 +796,7 @@ html, body{
     top: 10px;
 }
 
-.slideIn {
+.slide-in {
     font-family: 'Fredoka One';
     font-weight: normal;
     background: var(--grad);
@@ -720,19 +810,19 @@ html, body{
     left: -2000px;
     width: 70%;
     opacity: 1;
-    animation: slideIn 0.25s forwards;
-    -webkit-animation: slideIn 0.25s forwards;
-    -moz-animation: slideIn 0.25s forwards;
-    -ms-animation: slideIn 0.25s forwards;
-    -o-animation: slideIn 0.25s forwards;
-    animation-delay: 0.75s;
-    -webkit-animation-delay: 0.75s;
-    -moz-animation-delay: 0.75s;
-    -ms-animation-delay: 0.75s;
-    -o-animation-delay: 0.75s;
+    animation: slide-in 0.25s forwards;
+    -webkit-animation: slide-in 0.25s forwards;
+    -moz-animation: slide-in 0.25s forwards;
+    -ms-animation: slide-in 0.25s forwards;
+    -o-animation: slide-in 0.25s forwards;
+    animation-delay: 1.5s;
+    -webkit-animation-delay: 1.5s;
+    -moz-animation-delay: 1.5s;
+    -ms-animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
 }
 
-.pgheader_hr {
+.pgheader-hr {
     background-color: var(--blue);
     border: 0px;
     height: 5px;
@@ -745,9 +835,10 @@ html, body{
     display: flex;
     grid-column:  2 / 3;
     position: relative;
-    justify-items: center;
+    justify-content: center;
     margin: 0 auto;
-    top: 30px;
+    left: 2vw;
+    top: 7vh;
     background-color: white;
     width: 140px;
     height: 140px;
@@ -767,13 +858,23 @@ html, body{
     display: flex;
     grid-column:  2 / 3;
     justify-content: center;
-    margin: 0 auto;
-    gap: 0px;
-    top: 45px;
-    color: var(--blue);
+    top: 11vh;
+    left: -10px;
+    gap: 10px;
     position: relative;
     font-size: 30pt;
     text-align: justify; 
+    cursor: pointer;
+}
+
+.fa-instagram:hover, 
+.fa-facebook-official:hover,
+.fa-github:hover  {
+    background: var(--grad);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    font-weight: bold;
 }
 
 .insta-hover:hover{
@@ -791,7 +892,7 @@ html, body{
     justify-content: center;
     margin: 0 auto;
     right: 0vw;
-    top: 30px;
+    top: 10vh;
     padding: 20%;
     bottom: 0px;
     height: 10%;
@@ -800,14 +901,15 @@ html, body{
     text-align: left;
 }
 
-.contact_info {
+.contact-info {
     display: block;
     grid-column:  1 / 4;
     position: relative;
     justify-content: center;
+    right: 0px;
     padding: 20%;
     margin: 0 auto;
-    bottom: 50px;
+    bottom: 1vh;
     height: 200px;
     width: 100%;
     font-size: 1em;
@@ -819,8 +921,8 @@ html, body{
     grid-column: 1 / 4;
     position: relative;
     margin: 0 auto;
-    top: 100px;
-    left: 40px;
+    align-items: center;
+    left: 20%;
     font-size: 1.5em;
     font-family: 'Fredoka One';
     background: linear-gradient(90deg, #cc008d 0%, #00afd2 100%);
@@ -848,7 +950,7 @@ a:hover {
     font-weight: bold;;
 }
 
-.contact_form {
+.contact-form {
     display: block;
     grid-column: 1 / 4;
     position: relative;
@@ -857,7 +959,7 @@ a:hover {
     width: 105%;
 }
 
-.form_tag {
+.form-tag {
     display: block;
     grid-column: 1 / 4;
     padding-left: 35px;
@@ -874,7 +976,7 @@ a:hover {
     font-size: 1rem;
 }
 
-.contact_text {
+.contact-text {
     width: 100%;
     margin: 5px;
     padding: 10px;
@@ -886,7 +988,7 @@ a:hover {
     transition: 0.5s ease-in-out;
 }
 
-.contact_text:focus {
+.contact-text:focus {
     background-color: var(--blue);
     border-radius: 10px;
     transition: 0.5s ease-in-out;
@@ -914,7 +1016,7 @@ a:hover {
     transition: 0.5s ease-in-out; 
 }
 
-.submit_btn {
+.submit-btn {
     display: block;
     width: 100px;
     margin: 5px;
@@ -931,7 +1033,7 @@ a:hover {
     transition: 0.5s ease-out;
 }
 
-.submit_btn:hover {
+.submit-btn:hover {
     background: var(--blue);
     color:var(--dark);
     cursor: pointer;
@@ -996,7 +1098,7 @@ footer p {
     grid-template-columns: 25% 25% 25% 25%;
 }
 
-#small_circle { 
+#small-circle { 
     display: flex;
     grid-column: 1 / 1;
     position: absolute;
@@ -1015,7 +1117,7 @@ footer p {
     -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
 }
 
-#medium_circle { 
+#medium-circle { 
     display: flex;
     grid-column: 1 / 2;
     position: absolute;
@@ -1034,7 +1136,7 @@ footer p {
     -webkit-animation: rotation 8s linear infinite;
 }
 
-#big_circle { 
+#big-circle { 
     display: flex;
     grid-column: 4 / 4;
     position: absolute;
@@ -1053,7 +1155,7 @@ footer p {
     -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
 }
 
-#dotted_circle {
+#dotted-circle {
     display: flex;
     grid-column: 4 / 4;
     position: absolute;
@@ -1071,7 +1173,7 @@ footer p {
     -webkit-animation: rotation 60s linear infinite;
 }
 
-#blue_dotted_circle {
+#bluedotted-circle {
     display: flex;
     grid-column: 1 / 1;
     position: absolute;
@@ -1089,7 +1191,7 @@ footer p {
     -webkit-animation: rotation 60s linear infinite;
 }
 
-#giant_circle {
+#giant-circle {
     display: flex;
     grid-column: 1 / 2;
     position: absolute;
@@ -1102,7 +1204,7 @@ footer p {
     background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--opacity) 10px, var(--opacity) 20px);
 }
 
-#radius_circle {
+#radius-circle {
     display: flex;
     grid-column: 2 / 3;
     position: absolute;
@@ -1115,7 +1217,7 @@ footer p {
     border: 2px solid var(--pink); 
 }
 
-#line_anim {
+#line-anim {
     display: flex;
     grid-column: 4 / 4;
     position: absolute;
@@ -1125,11 +1227,11 @@ footer p {
     width: 2px;
     height: 1px;
     background: var(--blue);
-    animation: line_anim 12s 0s ease-in-out alternate infinite;
-    -webkit-animation: line_anim 12s 0s ease-in-out alternate infinite;
-    -moz-animation: line_anim 12s 0s ease-in-out alternate infinite;
-    -ms-animation: line_anim 12s 0s ease-in-out alternate infinite;
-    -o-animation: line_anim 12s 0s ease-in-out alternate infinite;
+    animation: line-anim 12s 0s ease-in-out alternate infinite;
+    -webkit-animation: line-anim 12s 0s ease-in-out alternate infinite;
+    -moz-animation: line-anim 12s 0s ease-in-out alternate infinite;
+    -ms-animation: line-anim 12s 0s ease-in-out alternate infinite;
+    -o-animation: line-anim 12s 0s ease-in-out alternate infinite;
 }
 
 
@@ -1151,7 +1253,7 @@ footer p {
         grid-template-columns: 25% 25% 25% 25%;
     }
     
-    #small_circle { 
+    #small-circle { 
         display: flex;
         grid-column: 1 / 1;
         position: absolute;
@@ -1170,7 +1272,7 @@ footer p {
         -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
     }
     
-    #medium_circle { 
+    #medium-circle { 
         display: flex;
         grid-column: 1 / 2;
         position: absolute;
@@ -1189,7 +1291,7 @@ footer p {
         -webkit-animation: rotation 8s linear infinite;
     }
     
-    #big_circle { 
+    #big-circle { 
         display: flex;
         grid-column: 4 / 4;
         position: absolute;
@@ -1208,7 +1310,7 @@ footer p {
         -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
     }
     
-    #dotted_circle {
+    #dotted-circle {
         display: flex;
         grid-column: 4 / 4;
         position: absolute;
@@ -1226,7 +1328,7 @@ footer p {
         -webkit-animation: rotation 60s linear infinite;
     }
     
-    #blue_dotted_circle {
+    #bluedotted-circle {
         display: flex;
         grid-column: 1 / 1;
         position: absolute;
@@ -1244,7 +1346,7 @@ footer p {
         -webkit-animation: rotation 60s linear infinite;
     }
     
-    #giant_circle {
+    #giant-circle {
         display: flex;
         grid-column: 1 / 2;
         position: absolute;
@@ -1257,7 +1359,7 @@ footer p {
         background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--opacity) 10px, var(--opacity) 20px);
     }
     
-    #radius_circle {
+    #radius-circle {
         display: flex;
         grid-column: 2 / 3;
         position: absolute;
@@ -1270,7 +1372,7 @@ footer p {
         border: 2px solid var(--pink); 
     }
     
-    #line_anim {
+    #line-anim {
         display: flex;
         grid-column: 4 / 4;
         position: absolute;
@@ -1280,11 +1382,11 @@ footer p {
         width: 2px;
         height: 1px;
         background: var(--blue);
-        animation: line_anim 12s 0s ease-in-out alternate infinite;
-        -webkit-animation: line_anim 12s 0s ease-in-out alternate infinite;
-        -moz-animation: line_anim 12s 0s ease-in-out alternate infinite;
-        -ms-animation: line_anim 12s 0s ease-in-out alternate infinite;
-    -o-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        animation: line-anim 12s 0s ease-in-out alternate infinite;
+        -webkit-animation: line-anim 12s 0s ease-in-out alternate infinite;
+        -moz-animation: line-anim 12s 0s ease-in-out alternate infinite;
+        -ms-animation: line-anim 12s 0s ease-in-out alternate infinite;
+        -o-animation: line-anim 12s 0s ease-in-out alternate infinite;
     }
 }
 
@@ -1305,7 +1407,7 @@ footer p {
         grid-template-columns: 25% 25% 25% 25%;
     }
 
-    #small_circle { 
+    #small-circle { 
         display: flex;
         grid-column: 1 / 2;
         position: absolute;
@@ -1324,7 +1426,7 @@ footer p {
         -webkit-animation: small-circle 3s ease-in-out 0s infinite alternate;
     }
 
-    #medium_circle { 
+    #medium-circle { 
         display: flex;
         grid-column: 1 / 2;
         position: absolute;
@@ -1343,7 +1445,7 @@ footer p {
         -webkit-animation: rotation 8s linear infinite;
     }
     
-    #big_circle { 
+    #big-circle { 
         display: flex;
         grid-column: 3 / 4;
         position: absolute;
@@ -1362,7 +1464,7 @@ footer p {
         -webkit-animation: big-circle 5s ease-in-out 0s infinite alternate;
     }
     
-    #dotted_circle {
+    #dotted-circle {
         display: flex;
         grid-column: 4 / 4;
         position: absolute;
@@ -1380,7 +1482,7 @@ footer p {
         -webkit-animation: rotation 60s linear infinite;
     }
     
-    #blue_dotted_circle {
+    #bluedotted-circle {
         display: flex;
         grid-column: 1 / 1;
         position: absolute;
@@ -1398,7 +1500,7 @@ footer p {
         -webkit-animation: rotation 60s linear infinite;
     }
 
-    #giant_circle {
+    #giant-circle {
         display: flex;
         grid-column: 1 / 2;
         position: absolute;
@@ -1411,7 +1513,7 @@ footer p {
         background: repeating-linear-gradient(-45deg, var(--pink), var(--pink) 10px, var(--opacity) 10px, var(--opacity) 20px);
     }
 
-    #radius_circle {
+    #radius-circle {
         display: flex;
         grid-column: 1 / 1;
         position: absolute;
@@ -1424,7 +1526,7 @@ footer p {
         border: 2px solid var(--pink); 
     }
     
-    #line_anim {
+    #line-anim {
         display: flex;
         grid-column: 4 / 4;
         position: absolute;
@@ -1434,11 +1536,11 @@ footer p {
         width: 2px;
         height: 1px;
         background: var(--blue);
-        animation: line_anim 10s 0s ease-in-out alternate infinite;
-        -webkit-animation: line_anim 10s 0s ease-in-out alternate infinite;
-        -moz-animation: line_anim 12s 0s ease-in-out alternate infinite;
-        -ms-animation: line_anim 12s 0s ease-in-out alternate infinite;
-        -o-animation: line_anim 12s 0s ease-in-out alternate infinite;
+        animation: line-anim 10s 0s ease-in-out alternate infinite;
+        -webkit-animation: line-anim 10s 0s ease-in-out alternate infinite;
+        -moz-animation: line-anim 12s 0s ease-in-out alternate infinite;
+        -ms-animation: line-anim 12s 0s ease-in-out alternate infinite;
+        -o-animation: line-anim 12s 0s ease-in-out alternate infinite;
     }
 }
 
@@ -1449,13 +1551,13 @@ footer p {
 /*============================================================
 ====================keyframes animations====================*/
 
-@keyframes slideIn {
+@keyframes slide-in {
         100% {
             left: 0;
         }
     }
 
-@-webkit-keyframes slideIn {
+@-webkit-keyframes slide-in {
         100% {
             left: 0;
         }
@@ -1514,7 +1616,7 @@ footer p {
         }
     }
 
-@keyframes line_anim {
+@keyframes line-anim {
         0% {
             transform: scaleY(0.0);
         }
@@ -1527,10 +1629,10 @@ footer p {
     }
 
 
-/*mobile animation for line_anim*/
+/*mobile animation for line-anim*/
 @media screen and (max-width:921px) {
 
-    @keyframes line_anim {
+    @keyframes line-anim {
         0% {
             transform: scaleY(0.0);
         }

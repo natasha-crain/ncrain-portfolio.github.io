@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>NC Portfolio - Contact Me</title>
-    <link rel="icon" href="images/logo_shape.png" type="image/icon type">
-    <link href="styles/styles.css" rel="stylesheet" type="text/css" />
-    <link href="styles/transitions.css" rel="stylesheet" type="text/css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" type="text/css" />
-    <script src="https://use.fontawesome.com/134e387789.js"></script>
-    <script src="scripts/transitions.js"></script>
+    <link rel="icon" href="static/images/logo_shape.png" type="image/icon" />
+    <link href="static/styles/styles.css" rel="stylesheet" type="text/css" />
+    <link href="static/styles/transitions.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-<div class="transition transition-1 is-active"></div><!--for page transition animations-->
+<!--for page transition animations-->
+<div class="transition transition-1 is-active"></div>
+<!--header and nav-->
 <header>
-    <img class="logo" src="images/logo.png" alt="NC Portfolio Logo" onclick="window.open('index.html', '_blank');">
+    <img class="logo" src="static/images/logo.png" alt="NC Portfolio Logo" onclick="window.location.href = 'index.html';" />
     <input type="checkbox" id="nav-toggle" class="nav-toggle">
     <nav>
         <ul>
@@ -31,36 +30,39 @@
 <div>
     <div id="contact" class="card">
         <div class="wrapper">
-            <div class="slideIn">
+            <div class="slide-in">
                 <div class="pageheader">Contact Me.</div>
-                <hr class="pgheader_hr">
+                <hr class="pgheader-hr">
             </div>
         </div>
         <!--followed steps at https://formsubmit.co/ for working contact form-->
-        <div class="form_tag">Fill out the form below to send a message and I will get back to you within 48 hours.</div>
-        <form class="contact_form" action="https://formsubmit.co/n.crain@outlook.com" method="POST">
+        <div class="form-tag">Fill out the form below to send a message and I will get back to you within 48 hours.</div>
+        <form class="contact-form" action="https://formsubmit.co/n.crain@outlook.com" method="POST">
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_next" value="https://ncrain-boop.github.io/thankyou.html">
-            <input type="text" name="name" class="contact_text" placeholder="Name *" required>
-            <input type="email" name="email" class="contact_text" placeholder="Email *" required>
-            <input type="text" name="subject" class="contact_text" placeholder="Subject">
+            <input type="text" name="name" class="contact-text" placeholder="Name *" required>
+            <input type="email" name="email" class="contact-text" placeholder="Email *" required>
+            <input type="text" name="subject" class="contact-text" placeholder="Subject">
             <textarea class="message" name="message" placeholder="Your message..."></textarea>
-            <input type="submit" name="submit" class="submit_btn" value="Send">
+            <input type="submit" name="submit" class="submit-btn" value="Send">
         </form>
     </div>
 </div>
-<div><!--div container for background animated circles-->
-    <div id="small_circle"></div>
-    <div id="medium_circle"></div>
-    <div id="big_circle"></div>
-    <div id="dotted_circle"></div>
-    <div id="giant_circle"></div>
-    <div id="blue_dotted_circle"></div>
-    <div id="radius_circle"></div>
-    <div id="line_anim"></div>
+<!--background animations-->
+<div>
+    <div id="small-circle"></div>
+    <div id="medium-circle"></div>
+    <div id="big-circle"></div>
+    <div id="dotted-circle"></div>
+    <div id="giant-circle"></div>
+    <div id="bluedotted-circle"></div>
+    <div id="radius-circle"></div>
+    <div id="line-anim"></div>
 </div>
 <footer>
-    <div class="footer"><p>&copyMMXXI Natasha Crain</div>
+    <div class="footer"><p>&copy;MMXXI Natasha Crain</div>
 </footer>
+<!--script for page transitions-->
+<script src="static/scripts/transitions.js"></script>
 </body>
 </html>
